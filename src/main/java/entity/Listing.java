@@ -10,14 +10,25 @@ public class Listing {
     private String name;
     private BufferedImage photo;
     private List<Category> categories;
-    private final User owner;
+    private User owner;
+//    NEED A WAY TO ATTACH OWNER
 
-    public Listing(String name, BufferedImage photo, List<Category> categories, User owner) {
+    public Listing(String name, BufferedImage photo, List<Category> categories) {
         this.name = name;
         this.photo = photo;
         this.categories = categories;
-        this.owner = owner;
+        //    NEED A WAY TO ATTACH USER WHO CREATES LISTING AS OWNER
+//        this.owner = owner;
     }
+
+    //overload
+    public Listing(String name, BufferedImage photo) {
+        this.name = name;
+        this.photo = photo;
+        //NEED A WAY TO ATTACH USER CREATING THE LISTING AS OWNER
+//        this.owner = owner;
+    }
+
 
     public void change_category(List<Category> new_categories) {
         this.categories = new_categories;
