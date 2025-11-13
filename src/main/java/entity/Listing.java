@@ -11,20 +11,26 @@ public class Listing {
     private BufferedImage photo;
     private List<Category> categories;
     private User owner;
+    private int listingId;
 //    NEED A WAY TO ATTACH OWNER
 
-    public Listing(String name, BufferedImage photo, List<Category> categories) {
+    public Listing(String name, BufferedImage photo, List<Category> categories, int listingId, User owner) {
         this.name = name;
         this.photo = photo;
         this.categories = categories;
+        this.owner = owner;
+        this.listingId = generateListingId();
         //    NEED A WAY TO ATTACH USER WHO CREATES LISTING AS OWNER
 //        this.owner = owner;
     }
 
     //overload
-    public Listing(String name, BufferedImage photo) {
+    public Listing(String name, BufferedImage photo, int listingId, User owner) {
         this.name = name;
         this.photo = photo;
+        this.listingId = listingId;
+        this.owner = owner;
+
         //NEED A WAY TO ATTACH USER CREATING THE LISTING AS OWNER
 //        this.owner = owner;
     }
@@ -49,4 +55,7 @@ public class Listing {
     public BufferedImage get_img() { return photo; }
 
     public User get_owner() { return owner; }
+    public int generateListingId() {
+        int result = owner.get_username().hashCode() + name.hashCode();
+    }
 }
