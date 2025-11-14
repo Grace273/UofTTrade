@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public interface LoginUserDataAccessInterface {
 
-    boolean userExists(String userIdentifier) throws IOException;
+    boolean userExists(String userIdentifier);
 
     User getUser(String userIdentifier);
 

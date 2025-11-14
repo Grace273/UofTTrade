@@ -18,7 +18,7 @@ public class UserDataAccessObject implements LoginUserDataAccessInterface {
     }
 
     @Override
-    public boolean userExists(String userIdentifier) throws IOException {
+    public boolean userExists(String userIdentifier) {
         for (int i = 0; i < USERINFO.length(); i++) {
             JSONObject user = USERINFO.getJSONObject(i);
             if (user.getString("Email").equals(userIdentifier) || user.getString("Username").equals(userIdentifier)) {

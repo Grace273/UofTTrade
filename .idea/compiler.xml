@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="API-Tester" />
+        <module name="UofTTrade" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="API-Tester" target="25" />
+    </bytecodeTargetLevel>
   </component>
 </project>
