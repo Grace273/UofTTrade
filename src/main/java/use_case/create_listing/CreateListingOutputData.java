@@ -12,20 +12,30 @@ public class CreateListingOutputData {
     private BufferedImage photo;
     private User owner;
     private List<Category> categories = new ArrayList<>();
+    private final int listingId;
 
-    public CreateListingOutputData(String name, BufferedImage photo, List<Category> categories) {
+
+    public CreateListingOutputData(String name, BufferedImage photo, List<Category> categories, User owner, int listingId) {
         this.name = name;
         this.photo = photo;
         this.categories = categories;
-        //NEED A WAY TO ATTACH USER CREATING THE LISTING AS OWNER
-//        this.owner = owner;
+        this.owner = owner;
+        this.listingId = listingId;
     }
 
     //overloaded
-    public CreateListingOutputData(String name, BufferedImage photo) {
+    public CreateListingOutputData(String name, BufferedImage photo, User owner, int listingId) {
         this.name = name;
         this.photo = photo;
-        //NEED A WAY TO ATTACH USER CREATING THE LISTING AS OWNER
-//        this.owner = owner;
+        this.owner = owner;
+        this.listingId = listingId;
     }
+
+    public List<Category> get_categories() { return categories; }
+
+    public String get_name() { return name; }
+
+    public BufferedImage get_img() { return photo; }
+
+    public User get_owner() { return owner; }
 }

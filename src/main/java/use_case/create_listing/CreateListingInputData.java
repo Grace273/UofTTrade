@@ -11,34 +11,24 @@ public class CreateListingInputData {
     private String name;
     private BufferedImage photo;
     private List<Category> categories = new ArrayList<>();
-    private User owner;
+    private final User owner;
+    private final int listingId;
 
-    public CreateListingInputData(String name, BufferedImage photo, List<Category> categories) {
+
+    public CreateListingInputData(String name, BufferedImage photo, List<Category> categories, User owner) {
         this.name = name;
         this.categories = categories;
         this.photo = photo;
-        //NEED A WAY TO ATTACH USER CREATING THE LISTING AS OWNER
-//        this.owner = owner;
+        this.owner = owner;
+        listingId = generateListingId();
     }
 
-    //overload
-    public CreateListingInputData(String name, BufferedImage photo) {
+    // overloaded constructor for when no categories are provided
+    public CreateListingInputData(String name, BufferedImage photo, User owner) {
         this.name = name;
         this.photo = photo;
-        //NEED A WAY TO ATTACH USER CREATING THE LISTING AS OWNER
-//        this.owner = owner;
-    }
-
-    public void change_category(List<Category> new_categories) {
-        this.categories = new_categories;
-    }
-
-    public void change_name(String new_name) {
-        this.name = new_name;
-    }
-
-    public void change_img(BufferedImage new_img) {
-        this.photo = new_img;
+        this.owner = owner;
+        listingId = generateListingId();
     }
 
     public List<Category> get_categories() { return categories; }
@@ -48,4 +38,15 @@ public class CreateListingInputData {
     public BufferedImage get_img() { return photo; }
 
     public User get_owner() { return owner; }
+
+    public int get_listing_id() { return listingId; }
+
+    /**
+     * Generates a unique ID for the Listing. Helper to the constructor.
+     * @return the generated ID
+     */
+    private int generateListingId() {
+        int result = owner.get_username().hashCode() + name.hashCode();
+        return result;
+    }
 }

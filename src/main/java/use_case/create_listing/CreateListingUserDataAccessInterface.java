@@ -1,29 +1,33 @@
 package use_case.create_listing;
-import entity.Category;
-
-import java.awt.image.BufferedImage;
-import java.util.List;
+import entity.Listing;
+import entity.User;
 
 public interface CreateListingUserDataAccessInterface {
     /**
-     * Checks if a name is inputted.
-     * @param name input
-     * @return true if name is Null
+     * Checks if the given listingID exists.
+     * @param listingId the username to look for
+     * @return true if a user with the given username exists; false otherwise
      */
-    boolean nameFieldIsNull(String name);
+    boolean existsById(String listingId);
 
     /**
-     * Checks if a name is inputted.
-     * @param photo input
-     * @return true if name is Null
+     * Checks if the given user exists.
+     * @param username the username to look for
+     * @return true if a user with the given username exists; false otherwise
      */
-    boolean photoFieldIsNull(BufferedImage photo);
+    boolean existsByUsername(String username);
+
+//    /**
+//     * Returns the user with the given username.
+//     * @param username the username to look up
+//     * @return the user with the given username
+//     */
+//    User getUserByUsername(String username);
 
     /**
-     * Checks if categories are inputted.
-     * @param categories input
-     * @return true if name is Null
+     * Saves the Listing.
+     * @param listing the user to save
      */
-    boolean categoryFieldIsNull(List<Category> categories);
+    void save(Listing listing);
 
 }
