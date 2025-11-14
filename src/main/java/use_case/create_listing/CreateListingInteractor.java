@@ -19,7 +19,7 @@ public class CreateListingInteractor implements CreateListingInputBoundary{
     @Override
     public void execute(CreateListingInputData createListingInputData) {
 
-        final String id = createListingInputData.get_listingId();
+        final int id = createListingInputData.get_listing_id();
         final User owner = createListingInputData.get_owner();
 
         // check if a listing of the same ID already exists
@@ -47,7 +47,7 @@ public class CreateListingInteractor implements CreateListingInputBoundary{
      * Switches to ViewProfile use case
      */
     @Override
-    public void switchToProfileView() { userPresenter.switchToProfileView();}
+    public void switchToProfileView() { createListingPresenter.switchToProfileView();}
 
     /**
      * Returns a Listing object. Helper method for execute.
@@ -61,16 +61,16 @@ public class CreateListingInteractor implements CreateListingInputBoundary{
             listing = new Listing(
                     createListingInputData.get_name(),
                     createListingInputData.get_img(),
-                    createListingInputData.get_owner(),
-                    createListingInputData.get_listing_id()
+                    createListingInputData.get_listing_id(),
+                    createListingInputData.get_owner()
             );
         } else {
             listing = new Listing(
                     createListingInputData.get_name(),
                     createListingInputData.get_img(),
                     createListingInputData.get_categories(),
-                    createListingInputData.get_owner(),
-                    createListingInputData.get_listing_id()
+                    createListingInputData.get_listing_id(),
+                    createListingInputData.get_owner()
             );
         }
         return listing;

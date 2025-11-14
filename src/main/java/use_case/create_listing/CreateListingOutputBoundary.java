@@ -16,5 +16,5 @@ public interface CreateListingOutputBoundary {
     /**
      * Executes the switch to the view profile use case
      */
-    void switchToProfileView()
+    void switchToProfileView();
 }

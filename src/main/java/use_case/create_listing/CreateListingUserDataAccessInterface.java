@@ -8,7 +8,7 @@ public interface CreateListingUserDataAccessInterface {
      * @param listingId the username to look for
      * @return true if a user with the given username exists; false otherwise
      */
-    boolean existsById(String listingId);
+    boolean existsById(int listingId);
 
     /**
      * Checks if the given user exists.
