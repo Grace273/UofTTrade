@@ -31,4 +31,8 @@ public class User {
     public void delete_listing(Listing listing) {
         listings.remove(listing);
     }
+
+    public List<Listing> get_listings() {
+        return listings;
+    }
 }

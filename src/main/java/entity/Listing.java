@@ -1,32 +1,28 @@
 package entity;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-import javax.imageio.ImageIO;
 
 public class Listing {
     private String name;
     private BufferedImage photo;
     private List<Category> categories;
     private User owner;
-//    NEED A WAY TO ATTACH OWNER
+    private int listingId;
 
-    public Listing(String name, BufferedImage photo, List<Category> categories) {
+    public Listing(String name, BufferedImage photo, List<Category> categories, int listingId, User owner) {
         this.name = name;
         this.photo = photo;
         this.categories = categories;
-        //    NEED A WAY TO ATTACH USER WHO CREATES LISTING AS OWNER
-//        this.owner = owner;
+        this.owner = owner;
+        this.listingId = generateListingId();
     }
 
     //overload
-    public Listing(String name, BufferedImage photo) {
+    public Listing(String name, BufferedImage photo, int listingId, User owner) {
         this.name = name;
         this.photo = photo;
-        //NEED A WAY TO ATTACH USER CREATING THE LISTING AS OWNER
-//        this.owner = owner;
+        this.listingId = listingId;
+        this.owner = owner;
     }
 
 
@@ -49,4 +45,13 @@ public class Listing {
     public BufferedImage get_img() { return photo; }
 
     public User get_owner() { return owner; }
+
+    /**
+     * Generates a unique ID for the Listing. Helper to the constructor.
+     * @return the generated ID
+     */
+    private int generateListingId() {
+        int result = owner.get_username().hashCode() + name.hashCode();
+        return result;
+    }
 }
