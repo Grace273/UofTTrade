@@ -3,8 +3,6 @@ package use_case.login;
 import entity.User;
 import org.json.JSONArray;
 
-import java.io.IOException;
-
 /**
  * Data Access Interface for the login use case
  */
