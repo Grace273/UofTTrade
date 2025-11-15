@@ -21,6 +21,8 @@ public class User {
 
     public String get_email() { return  email; }
 
+    public String get_password() { return password; }
+
 
     public void add_listing(Listing listing) {
         listings.add(listing);
