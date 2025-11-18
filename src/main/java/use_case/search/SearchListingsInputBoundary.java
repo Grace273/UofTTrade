@@ -1,14 +1,7 @@
 package use_case.search;
 
-/**
- * Input boundary for the search listings use case.
- */
-public interface SearchListingsInputBoundary {
+import java.io.IOException;
 
-    /**
-     * Handles a search request that may include both keyword and category filters.
-     *
-     * @param inputData raw values passed in from the controller
-     */
+public interface SearchListingsInputBoundary {
     void execute(SearchListingsInputData inputData);
 }
