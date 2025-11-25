@@ -2,11 +2,9 @@ package interface_adapter.messaging;
 
 import interface_adapter.ViewModel;
 
-import javax.swing.*;
-
 public class MessagingViewModel extends ViewModel<MessagingViewModel.State> {
-
-    public static final String VIEW_NAME = "Messaging";
+    // Distinguish as Messaging view model
+    public static final String VIEW_NAME = "messaging";
 
     public static class State {
         public String title;
@@ -16,11 +14,12 @@ public class MessagingViewModel extends ViewModel<MessagingViewModel.State> {
 
     public MessagingViewModel() {
         super(VIEW_NAME);
-        State intialState = new State();
-        intialState.title = "";
-        intialState.gmailUrl = "";
-        intialState.error = "";
-        setState(intialState);
-    }
 
+        State initial = new State();
+        initial.title = "";
+        initial.gmailUrl = null;
+        initial.error = null;
+
+        setState(initial);
+    }
 }

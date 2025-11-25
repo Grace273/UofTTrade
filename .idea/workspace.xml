@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b6cbc8-de7a-4ddf-9a63-f74472710dcf" name="Changes" comment="Modify the MessagingViewModel to fit the existing ViewModel">
+    <list default="true" id="67b6cbc8-de7a-4ddf-9a63-f74472710dcf" name="Changes" comment="Update the MessagingViewModel to fit the existing ViewModel">
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/DemoMessagingSubViewMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MessagingSubpageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MessagingSubpageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/messaging/MessagingViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/messaging/MessagingViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MessagingSubpageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MessagingSubView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingPresenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,22 +37,22 @@
     &quot;assignee&quot;: &quot;TutorialBot77&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Grace273/UofTTrade.git",
-    "accountId": "4ecc9055-5388-4cad-bcf6-ba94861973d0"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Grace273/UofTTrade.git&quot;,
+    &quot;accountId&quot;: &quot;4ecc9055-5388-4cad-bcf6-ba94861973d0&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "Grace273",
-    "repository": "UofTTrade"
+    &quot;owner&quot;: &quot;Grace273&quot;,
+    &quot;repository&quot;: &quot;UofTTrade&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -60,13 +63,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.DemoMessagingSubViewMain.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "#34 on subpage",
+    "git-widget-placeholder": "subpage",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -99,17 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -122,7 +121,14 @@
       <updated>1763482832052</updated>
       <workItem from="1763482834058" duration="681000" />
       <workItem from="1763484237106" duration="667000" />
-      <workItem from="1763485167604" duration="3848000" />
+      <workItem from="1763485167604" duration="4286000" />
+      <workItem from="1763663675339" duration="1062000" />
+      <workItem from="1763667170585" duration="660000" />
+      <workItem from="1763772036384" duration="1164000" />
+      <workItem from="1763933318686" duration="631000" />
+      <workItem from="1763958842589" duration="596000" />
+      <workItem from="1763963064302" duration="1126000" />
+      <workItem from="1764034624268" duration="7732000" />
     </task>
     <task id="LOCAL-00001" summary="Modify the MessagingViewModel to fit the existing ViewModel">
       <option name="closed" value="true" />
@@ -132,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763487607899</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update the MessagingViewModel to fit the existing ViewModel">
+      <option name="closed" value="true" />
+      <created>1763489057888</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763489057888</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +154,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modify the MessagingViewModel to fit the existing ViewModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify the MessagingViewModel to fit the existing ViewModel" />
+    <MESSAGE value="Update the MessagingViewModel to fit the existing ViewModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the MessagingViewModel to fit the existing ViewModel" />
   </component>
 </project>
