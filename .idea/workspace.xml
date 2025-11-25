@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b6cbc8-de7a-4ddf-9a63-f74472710dcf" name="Changes" comment="Update the MessagingViewModel to fit the existing ViewModel">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/DemoMessagingSubViewMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/messaging/MessagingViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/messaging/MessagingViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MessagingSubpageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MessagingSubView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingPresenter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/MessagingSubpageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "subpage",
+    "git-widget-placeholder": "subpage__new",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -103,6 +100,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
