@@ -1,0 +1,231 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9f33f693-7486-4d97-9bb2-64113d6083ef\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/app/AppBuilder.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/app/AppBuilder.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/use_case/register/RegisterInteractor.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/use_case/register/RegisterInteractor.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/view/RegisterView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/view/RegisterView.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/app/AppBuilder.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/app/AppBuilder.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/use_case/register/RegisterInteractor.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/use_case/register/RegisterInteractor.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/view/RegisterView$1.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/view/RegisterView$1.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/view/RegisterView$2.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/view/RegisterView$2.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/view/RegisterView$3.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/view/RegisterView$3.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/view/RegisterView$4.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/view/RegisterView$4.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/view/RegisterView$5.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/view/RegisterView$5.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/view/RegisterView$6.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/view/RegisterView$6.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/view/RegisterView.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/view/RegisterView.class\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;TutorialBot77&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/Grace273/UofTTrade&quot;,\n    &quot;accountId&quot;: &quot;593b821d-918a-4c88-9b3f-7e4c9f4e6c63&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 5\n}</component>\n  <component name=\"ProjectId\" id=\"35ZuwCeWfNxfogMOkM2sZC3eT2h\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"Application.Main.executor\": \"Run\",\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252\": \"true\",\n    \"RunOnceActivity.git.unshallow\": \"true\",\n    \"git-widget-placeholder\": \"use-case-register\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.0\",\n    \"settings.editor.selected.configurable\": \"configurable.group.tools\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"9f33f693-7486-4d97-9bb2-64113d6083ef\" name=\"Changes\" comment=\"\" />\n      <created>1763330151641</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1763330151641</updated>\n      <workItem from=\"1763330153854\" duration=\"1171000\" />\n      <workItem from=\"1763334339547\" duration=\"129000\" />\n      <workItem from=\"1763334536727\" duration=\"168000\" />\n      <workItem from=\"1763334769180\" duration=\"356000\" />\n      <workItem from=\"1763335153594\" duration=\"1259000\" />\n      <workItem from=\"1763437999553\" duration=\"316000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6d950a333af4e2c918b97e2c21b5d40eabc97fd6)
++++ b/.idea/workspace.xml	(date 1763763197440)
+@@ -5,12 +5,84 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="9f33f693-7486-4d97-9bb2-64113d6083ef" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/like/LikeInputBoundary.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/like/LikeInputData.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/like/LikeInteractor.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/like/LikeOutputBoundary.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/like/LikeOutputData.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/like/LikeUserDataAccessInterface.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/register/RegisterInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/register/RegisterInteractor.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegisterView.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/data_access/UserDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/UserDataAccessObject.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Category.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/entity/Listing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Listing.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/entity/Messaging.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Messaging.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/User.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/ViewManagerModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/ViewManagerModel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/ViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/ViewModel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingPresenter.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingState.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingViewModel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginPresenter.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginState.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/login/LoginViewModel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterPresenter.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterState.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/register/RegisterViewModel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsPresenter.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsState.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsViewModel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfilePresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfilePresenter.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileState.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileViewModel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInteractor.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingOutputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingOutputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingUserDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingUserDataAccessInterface.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/login/LoginInputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/login/LoginInputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/login/LoginInteractor.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/login/LoginOutputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/login/LoginOutputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginUserDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/login/LoginUserDataAccessInterface.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingOutputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingOutputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingUserDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingUserDataAccessInterface.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/register/RegisterInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/register/RegisterInputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/register/RegisterInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/register/RegisterInputData.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/use_case/register/RegisterInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/register/RegisterInteractor.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/register/RegisterOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/register/RegisterOutputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/register/RegisterOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/register/RegisterOutputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/register/RegisterUserDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/register/RegisterUserDataAccessInterface.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsDataAccessInterface.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInteractor.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsOutputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsOutputData$ListingResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsOutputData$ListingResult.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsOutputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInteractor.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileOutputBoundary.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileOutputData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileUserDataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileUserDataAccessInterface.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/CreateListingView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreateListingView.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/LabelTextPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LabelTextPanel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LoginView.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterView$1.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterView$2.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterView$3.class" afterDir="false" />
+@@ -18,13 +90,27 @@
+       <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterView$5.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterView$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterView$6.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterView.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/view/ViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ViewManager.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++        <option value="Interface" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="like" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -35,8 +121,8 @@
+ }</component>
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/Grace273/UofTTrade&quot;,
+-    &quot;accountId&quot;: &quot;593b821d-918a-4c88-9b3f-7e4c9f4e6c63&quot;
++    &quot;url&quot;: &quot;https://github.com/Grace273/UofTTrade.git&quot;,
++    &quot;accountId&quot;: &quot;a95c1ddd-3999-4c21-afff-442a25a542b5&quot;
+   }
+ }</component>
+   <component name="ProjectColorInfo">{
+@@ -55,25 +141,45 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+     "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "use-case-register",
++    "git-widget-placeholder": "main",
+     "kotlin-language-version-configured": "true",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "configurable.group.tools",
++    "project.structure.last.edited": "Facets",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "settings.editor.selected.configurable": "preferences.pluginManager",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RunManager">
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="app.Main" />
++      <module name="UofTTrade" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="app.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Main" />
++        <item itemvalue="Application.Main" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+-        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
++        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -96,4 +202,19 @@
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="XSLT-Support.FileAssociations.UIState">
++    <expand />
++    <select />
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_25\" default=\"true\" project-jdk-name=\"openjdk-25\" project-jdk-type=\"JavaSDK\" />\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 6d950a333af4e2c918b97e2c21b5d40eabc97fd6)
++++ b/.idea/misc.xml	(date 1763484423668)
+@@ -8,5 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="openjdk-25" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="openjdk-25" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/.." />
++  </component>
+ </project>
+\ No newline at end of file

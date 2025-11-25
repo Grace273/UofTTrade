@@ -1,0 +1,389 @@
+<changelist name="Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]" date="1764089551851" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2025-11-25 AM11:52 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/RegisterView$6.class" />
+    <option name="AFTER_PATH" value="target/classes/view/RegisterView$6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterView$6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/RegisterView$4.class" />
+    <option name="AFTER_PATH" value="target/classes/view/RegisterView$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterView$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/search/SearchListingsPresenter.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/search/SearchListingsPresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsPresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/login/LoginInteractor.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/login/LoginInteractor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginInteractor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/RegisterView$2.class" />
+    <option name="AFTER_PATH" value="target/classes/view/RegisterView$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterView$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/search/SearchListingsOutputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/search/SearchListingsOutputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsOutputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/create_listing/CreateListingController.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/create_listing/CreateListingController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/entity/Listing.class" />
+    <option name="AFTER_PATH" value="target/classes/entity/Listing.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/Listing.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/create_listing/CreateListingInputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/create_listing/CreateListingInputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingInputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/LoginView.class" />
+    <option name="AFTER_PATH" value="target/classes/view/LoginView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/messaging/MessagingInputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/messaging/MessagingInputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/MessagingInputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/register/RegisterOutputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/register/RegisterOutputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterOutputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/view_profile/ViewProfileInputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/view_profile/ViewProfileInputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileInputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/entity/User.class" />
+    <option name="AFTER_PATH" value="target/classes/entity/User.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/User.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/create_listing/CreateListingUserDataAccessInterface.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/create_listing/CreateListingUserDataAccessInterface.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingUserDataAccessInterface.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/login/LoginUserDataAccessInterface.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/login/LoginUserDataAccessInterface.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginUserDataAccessInterface.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/create_listing/CreateListingInputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/create_listing/CreateListingInputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingInputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/search/SearchListingsOutputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/search/SearchListingsOutputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsOutputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/register/RegisterController.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/register/RegisterController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/messaging/MessagingUserDataAccessInterface.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/messaging/MessagingUserDataAccessInterface.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/MessagingUserDataAccessInterface.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/login/LoginOutputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/login/LoginOutputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginOutputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/ViewModel.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/ViewModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/messaging/MessagingOutputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/messaging/MessagingOutputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/MessagingOutputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/create_listing/CreateListingOutputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/create_listing/CreateListingOutputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingOutputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/messaging/MessagingOutputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/messaging/MessagingOutputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/MessagingOutputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/register/RegisterOutputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/register/RegisterOutputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterOutputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/view_profile/ViewProfileInteractor.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/view_profile/ViewProfileInteractor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileInteractor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/register/RegisterInputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/register/RegisterInputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterInputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/search/SearchListingsInputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/search/SearchListingsInputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsInputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/login/LoginInputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/login/LoginInputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginInputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/login/LoginController.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/login/LoginController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/data_access/UserDataAccessObject.class" />
+    <option name="AFTER_PATH" value="target/classes/data_access/UserDataAccessObject.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/UserDataAccessObject.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/create_listing/CreateListingPresenter.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/create_listing/CreateListingPresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingPresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/search/SearchListingsOutputData$ListingResult.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/search/SearchListingsOutputData$ListingResult.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsOutputData$ListingResult.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/view_profile/ViewProfilePresenter.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/view_profile/ViewProfilePresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfilePresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/create_listing/CreateListingOutputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/create_listing/CreateListingOutputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingOutputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/LabelTextPanel.class" />
+    <option name="AFTER_PATH" value="target/classes/view/LabelTextPanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LabelTextPanel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/RegisterView$5.class" />
+    <option name="AFTER_PATH" value="target/classes/view/RegisterView$5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterView$5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/search/SearchListingsState.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/search/SearchListingsState.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsState.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/view_profile/ViewProfileViewModel.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/view_profile/ViewProfileViewModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileViewModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/RegisterView$3.class" />
+    <option name="AFTER_PATH" value="target/classes/view/RegisterView$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterView$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/view_profile/ViewProfileState.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/view_profile/ViewProfileState.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileState.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/create_listing/CreateListingInteractor.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/create_listing/CreateListingInteractor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingInteractor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/view_profile/ViewProfileInputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/view_profile/ViewProfileInputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileInputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/register/RegisterViewModel.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/register/RegisterViewModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterViewModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/register/RegisterInteractor.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/register/RegisterInteractor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterInteractor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/entity/Category.class" />
+    <option name="AFTER_PATH" value="target/classes/entity/Category.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/Category.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/messaging/MessagingInputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/messaging/MessagingInputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/MessagingInputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/view_profile/ViewProfileController.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/view_profile/ViewProfileController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/RegisterView$1.class" />
+    <option name="AFTER_PATH" value="target/classes/view/RegisterView$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterView$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/ViewManager.class" />
+    <option name="AFTER_PATH" value="target/classes/view/ViewManager.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewManager.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/app/Main.class" />
+    <option name="AFTER_PATH" value="target/classes/app/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/Main.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/HomepageView.class" />
+    <option name="AFTER_PATH" value="target/classes/view/HomepageView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/HomepageView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/register/RegisterInputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/register/RegisterInputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterInputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/CreateListingView.class" />
+    <option name="AFTER_PATH" value="target/classes/view/CreateListingView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/login/LoginViewModel.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/login/LoginViewModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginViewModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/create_listing/CreateListingViewModel.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/create_listing/CreateListingViewModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingViewModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/search/SearchListingsInputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/search/SearchListingsInputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsInputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/entity/Messaging.class" />
+    <option name="AFTER_PATH" value="target/classes/entity/Messaging.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/Messaging.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/view_profile/ViewProfileOutputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/view_profile/ViewProfileOutputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileOutputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/ProfileView.class" />
+    <option name="AFTER_PATH" value="target/classes/view/ProfileView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ProfileView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/ViewManagerModel.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/ViewManagerModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewManagerModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/login/LoginPresenter.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/login/LoginPresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginPresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/view/RegisterView.class" />
+    <option name="AFTER_PATH" value="target/classes/view/RegisterView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/register/RegisterUserDataAccessInterface.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/register/RegisterUserDataAccessInterface.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterUserDataAccessInterface.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/search/SearchListingsViewModel.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/search/SearchListingsViewModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsViewModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/create_listing/CreateListingState.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/create_listing/CreateListingState.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/CreateListingState.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/search/SearchListingsDataAccessInterface.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/search/SearchListingsDataAccessInterface.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsDataAccessInterface.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/view_profile/ViewProfileOutputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/view_profile/ViewProfileOutputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileOutputData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/login/LoginInputBoundary.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/login/LoginInputBoundary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginInputBoundary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/login/LoginState.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/login/LoginState.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginState.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/register/RegisterPresenter.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/register/RegisterPresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterPresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/view_profile/ViewProfileUserDataAccessInterface.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/view_profile/ViewProfileUserDataAccessInterface.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/ViewProfileUserDataAccessInterface.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/app/AppBuilder.class" />
+    <option name="AFTER_PATH" value="target/classes/app/AppBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/AppBuilder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/search/SearchListingsInteractor.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/search/SearchListingsInteractor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/SearchListingsInteractor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/interface_adapter/register/RegisterState.class" />
+    <option name="AFTER_PATH" value="target/classes/interface_adapter/register/RegisterState.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/RegisterState.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/use_case/login/LoginOutputData.class" />
+    <option name="AFTER_PATH" value="target/classes/use_case/login/LoginOutputData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-11-25_AM11_52_[Changes]/LoginOutputData.class" />
+  </binary>
+</changelist>
