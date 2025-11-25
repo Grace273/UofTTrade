@@ -2,7 +2,6 @@ package view;
 import interface_adapter.login.LoginController;
 import interface_adapter.login.LoginState;
 import interface_adapter.login.LoginViewModel;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
@@ -49,7 +48,9 @@ public class LoginView extends JPanel implements ActionListener, PropertyChangeL
         imagePanel.setLayout(new BorderLayout(0, 0));
 
         imageLabel = new JLabel("");
-        imageLabel.setIcon(new ImageIcon("C:\\Users\\humbe\\IdeaProjects\\API Starter\\src\\resources\\images\\istockphoto-157334765-612x612.jpg"));
+        imageLabel.setIcon(new ImageIcon(
+                getClass().getResource("/images/istockphoto-157334765-612x612.jpg")
+        ));
         imagePanel.add(imageLabel);
 
         loginFormPanel = new JPanel();

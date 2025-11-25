@@ -1,33 +1,20 @@
 package use_case.create_listing;
+
 import entity.Listing;
-import entity.User;
+
+import java.io.IOException;
 
 public interface CreateListingUserDataAccessInterface {
-    /**
-     * Checks if the given listingID exists.
-     * @param listingId the username to look for
-     * @return true if a user with the given username exists; false otherwise
-     */
-    boolean existsById(int listingId);
-
-    /**
-     * Checks if the given user exists.
-     * @param username the username to look for
-     * @return true if a user with the given username exists; false otherwise
-     */
-    boolean existsByUsername(String username);
-
 //    /**
-//     * Returns the user with the given username.
-//     * @param username the username to look up
-//     * @return the user with the given username
+//     * Checks if the given name exists.
+//     * @param ListingID the listingID to look for
+//     * @return true if a user with the given name exists; false otherwise
 //     */
-//    User getUserByUsername(String username);
+//    boolean existsByListingID(int ListingID) throws IOException;
 
     /**
-     * Saves the Listing.
-     * @param listing the user to save
+     * Saves the lisiting.
+     * @param listing the listing to save
      */
-    void save(Listing listing);
-
+    void save(Listing listing) throws IOException;
 }

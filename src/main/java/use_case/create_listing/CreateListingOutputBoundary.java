@@ -14,7 +14,7 @@ public interface CreateListingOutputBoundary {
     void prepareFailView(String errorMessage);
 
     /**
-     * Executes the switch to the view profile use case
+     * Executes the switch to profile view use case.
      */
     void switchToProfileView();
 }

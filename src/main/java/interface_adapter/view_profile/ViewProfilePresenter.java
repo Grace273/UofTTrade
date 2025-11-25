@@ -30,6 +30,13 @@ public class ViewProfilePresenter implements ViewProfileOutputBoundary {
         // Clear previous error
         state.setErrorMessage("");
 
+        // NEW: Show "No Listings yet..." when listingNames is empty
+        if (outputData.getListingNames().isEmpty()) {
+            state.setNoListingsMessage("No listings yet...");
+        } else {
+            state.setNoListingsMessage(""); // clear message when listings exist
+        }
+
         viewModel.setState(state);
         viewModel.firePropertyChanged();
     }
@@ -45,6 +52,7 @@ public class ViewProfilePresenter implements ViewProfileOutputBoundary {
         state.setUsername("");
         state.setListingNames(List.of());
         state.setTitleText("");
+        state.setNoListingsMessage("");  // ensure this stays empty on failure
 
         viewModel.setState(state);
         viewModel.firePropertyChanged();

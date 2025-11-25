@@ -1,107 +1,76 @@
 package use_case.create_listing;
 
+import entity.Category;
 import entity.Listing;
 import entity.User;
+import use_case.view_profile.ViewProfileUserDataAccessInterface;
+
+import java.io.IOException;
+import java.util.List;
 
 public class CreateListingInteractor implements CreateListingInputBoundary{
-    private final CreateListingUserDataAccessInterface createListingDataAccess;
+    private final CreateListingUserDataAccessInterface createListingDataAccessObject;
     private final CreateListingOutputBoundary createListingPresenter;
+    private final ViewProfileUserDataAccessInterface userDataAccess;
 
-    public CreateListingInteractor(CreateListingUserDataAccessInterface createListingDataAccess, CreateListingOutputBoundary createListingPresenter) {
-        this.createListingDataAccess = createListingDataAccess;
-        this.createListingPresenter = createListingPresenter;
+    public CreateListingInteractor(CreateListingUserDataAccessInterface createListingDataAccess, CreateListingOutputBoundary createListingOutputBoundary, ViewProfileUserDataAccessInterface userDataAccess) {
+        this.createListingDataAccessObject = createListingDataAccess;
+        this.createListingPresenter = createListingOutputBoundary;
+        this.userDataAccess = userDataAccess;
     }
 
-    /**
-     * Executes the create listing use case
-     * @param createListingInputData the InputData for creating a listing
-     */
     @Override
-    public void execute(CreateListingInputData createListingInputData) {
+    public void execute(CreateListingInputData createListingInputData) throws IOException {
+        final String name = createListingInputData.get_name();
+        final String photo = createListingInputData.get_img_in_Base64();
+        final List<Category> categories = createListingInputData.get_categories();
 
-        final int id = createListingInputData.get_listing_id();
-        final User owner = createListingInputData.get_owner();
+        User user = userDataAccess.getCurrentLoggedInUser();
+//        createListingInputData.set_owner_and_listingID(user);
 
-        // check if a listing of the same ID already exists
-        if(createListingDataAccess.existsById(id)){
-            createListingPresenter.prepareFailView("Listing with id " + id + " already exists");
-            return;
+//        if(createListingDataAccessObject.existsByListingID(createListingInputData.get_listing_id())){
+//            createListingPresenter.prepareFailView("You already have a listing with this name");
+//        }
+        if(createListingInputData.get_name() == ""){
+            createListingPresenter.prepareFailView("A listing with a null name");
         }
-
-        // check if a user with the owner's username does not exist
-        if(!createListingDataAccess.existsByUsername(owner.get_username())) {
-            createListingPresenter.prepareFailView("Owner does not exist");
-            return;
+        else if(createListingInputData.get_img_in_Base64() == ""){
+            createListingPresenter.prepareFailView("The listing image is empty");
         }
+        else {
+            final CreateListingOutputData createListingOutputData;
+            final Listing listing;
 
-        // create instance of Listing entity save to the database
-        final Listing listing = getListing(createListingInputData);
-        createListingDataAccess.save(listing);
+            if (createListingInputData.get_categories().isEmpty()) {
+                listing = new Listing(createListingInputData.get_name(), createListingInputData.get_img_in_Base64(), user);
+                createListingOutputData = new CreateListingOutputData(
+                        createListingInputData.get_name(),
+                        createListingInputData.get_img_in_Base64(),
+                        user
+                );
+            }
+            else {
+                listing = new Listing(
+                        createListingInputData.get_name(),
+                        createListingInputData.get_img_in_Base64(),
+                        createListingInputData.get_categories(),
+                        user
+                );
+                createListingOutputData = new CreateListingOutputData(
+                        createListingInputData.get_name(),
+                        createListingInputData.get_img_in_Base64(),
+                        createListingInputData.get_categories(),
+                        user
+                );
+            }
 
-        // create the output data object and send to the presenter
-        final CreateListingOutputData createListingOutputData = getCreateListingOutputData(createListingInputData);
-        createListingPresenter.prepareSuccessView(createListingOutputData);
+            createListingDataAccessObject.save(listing);
+            createListingPresenter.prepareSuccessView(createListingOutputData);
+        }
     }
 
-    /**
-     * Switches to ViewProfile use case
-     */
     @Override
-    public void switchToProfileView() { createListingPresenter.switchToProfileView();}
-
-    /**
-     * Returns a Listing object. Helper method for execute.
-     * @param createListingInputData the InputData for creating a listing
-     * @return a Listing object
-     */
-    private Listing getListing(CreateListingInputData createListingInputData) {
-        final Listing listing;
-
-        if (createListingInputData.get_categories().isEmpty()) {
-            listing = new Listing(
-                    createListingInputData.get_name(),
-                    createListingInputData.get_img(),
-                    createListingInputData.get_listing_id(),
-                    createListingInputData.get_owner()
-            );
-        } else {
-            listing = new Listing(
-                    createListingInputData.get_name(),
-                    createListingInputData.get_img(),
-                    createListingInputData.get_categories(),
-                    createListingInputData.get_listing_id(),
-                    createListingInputData.get_owner()
-            );
-        }
-        return listing;
+    public void switchToProfileView() {
+        createListingPresenter.switchToProfileView();
     }
-
-    /**
-     * Returns a CreateListingOutputData object. Helper method for execute.
-     * @param createListingInputData the InputData for creating a listing
-     * @return a CreateListingOutputData object
-     */
-    private CreateListingOutputData getCreateListingOutputData(CreateListingInputData createListingInputData) {
-        final CreateListingOutputData createListingOutputData;
-
-        if (createListingInputData.get_categories().isEmpty()) {
-            createListingOutputData = new CreateListingOutputData(
-                    createListingInputData.get_name(),
-                    createListingInputData.get_img(),
-                    createListingInputData.get_owner(),
-                    createListingInputData.get_listing_id()
-            );
-        } else {
-            createListingOutputData = new CreateListingOutputData(
-                    createListingInputData.get_name(),
-                    createListingInputData.get_img(),
-                    createListingInputData.get_categories(),
-                    createListingInputData.get_owner(),
-                    createListingInputData.get_listing_id()
-            );
-        }
-
-        return createListingOutputData;
-    }
-
 }

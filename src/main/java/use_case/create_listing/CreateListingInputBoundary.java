@@ -1,15 +1,12 @@
 package use_case.create_listing;
 
+import java.io.IOException;
+
 public interface CreateListingInputBoundary {
+    void execute(CreateListingInputData createListingInputData) throws IOException;
 
     /**
-     * Executes the signup use case.
-     * @param createListingInputData the input data
-     */
-    void execute(CreateListingInputData createListingInputData);
-
-    /**
-     * Executes the switch to the view profile use case
+     * Executes the switch to profile view use case.
      */
     void switchToProfileView();
 }

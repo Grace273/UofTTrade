@@ -31,4 +31,6 @@ public interface LoginUserDataAccessInterface {
     String getUsername();
 
     String getEmail();
+
+    void setCurrentLoggedInUser(User user);
 }

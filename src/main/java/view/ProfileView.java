@@ -43,6 +43,7 @@ public class ProfileView extends JPanel implements PropertyChangeListener {
 
     // UI Components
     private final JLabel titleLabel = new JLabel();
+    private final JLabel noListingsLabel = new JLabel();   // << added
     private final JLabel errorLabel = new JLabel();
     private final JPanel listingsPanel = new JPanel();
 
@@ -72,9 +73,20 @@ public class ProfileView extends JPanel implements PropertyChangeListener {
         setLayout(new BorderLayout());
 
         // ----- Title area -----
+        JPanel titlePanel = new JPanel();
+        titlePanel.setLayout(new BoxLayout(titlePanel, BoxLayout.Y_AXIS));
+
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        add(titleLabel, BorderLayout.NORTH);
+        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        noListingsLabel.setFont(new Font("Arial", Font.ITALIC, 14));
+        noListingsLabel.setForeground(Color.GRAY);
+        noListingsLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        titlePanel.add(titleLabel);
+        titlePanel.add(noListingsLabel);
+
+        add(titlePanel, BorderLayout.NORTH);
 
         // ----- Error label -----
         errorLabel.setForeground(Color.RED);
@@ -115,6 +127,13 @@ public class ProfileView extends JPanel implements PropertyChangeListener {
 
         // Update title
         titleLabel.setText(state.getTitleText());
+
+        // Update "No Listings" message
+        if (state.getNoListingsMessage().isEmpty()) {
+            noListingsLabel.setText("");
+        } else {
+            noListingsLabel.setText(state.getNoListingsMessage());
+        }
 
         // Update error message
         if (state.getErrorMessage().isEmpty()) {

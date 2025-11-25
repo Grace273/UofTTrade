@@ -19,8 +19,6 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
     private final JLabel userGreetingLabel;
     private final JLabel recentItemsLabel;
     private final JButton viewProfileButton;
-    private final JButton viewListingButton;
-    private final JButton createListingButton;
     private final JButton search;
 
     private final String viewName = "logged in";
@@ -63,7 +61,7 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
         gbc_userGreetingLabel.gridy = 1;
         optionsPanel.add(userGreetingLabel, gbc_userGreetingLabel);
 
-        viewProfileButton = new JButton("View Profile");
+        viewProfileButton = new JButton("View My Profile");
         GridBagConstraints gbc_viewProfileButton = new GridBagConstraints();
         gbc_viewProfileButton.fill = GridBagConstraints.HORIZONTAL;
         gbc_viewProfileButton.insets = new Insets(0, 0, 5, 0);
@@ -71,23 +69,7 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
         gbc_viewProfileButton.gridy = 3;
         optionsPanel.add(viewProfileButton, gbc_viewProfileButton);
 
-        viewListingButton = new JButton("View Listings");
-        GridBagConstraints gbc_viewListingButton = new GridBagConstraints();
-        gbc_viewListingButton.fill = GridBagConstraints.BOTH;
-        gbc_viewListingButton.insets = new Insets(0, 0, 5, 0);
-        gbc_viewListingButton.gridx = 0;
-        gbc_viewListingButton.gridy = 5;
-        optionsPanel.add(viewListingButton, gbc_viewListingButton);
-
-        createListingButton = new JButton("Create Listing");
-        GridBagConstraints gbc_createListingButton = new GridBagConstraints();
-        gbc_createListingButton.fill = GridBagConstraints.HORIZONTAL;
-        gbc_createListingButton.insets = new Insets(0, 0, 5, 0);
-        gbc_createListingButton.gridx = 0;
-        gbc_createListingButton.gridy = 7;
-        optionsPanel.add(createListingButton, gbc_createListingButton);
-
-        search = new JButton("Search");
+        search = new JButton("Search Listings");
         GridBagConstraints gbc_search = new GridBagConstraints();
         gbc_search.fill = GridBagConstraints.BOTH;
         gbc_search.insets = new Insets(0, 0, 5, 0);
@@ -150,6 +132,10 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
 
         return panel;
 
+    }
+
+    public void addViewProfileListener(ActionListener listener) {
+        viewProfileButton.addActionListener(listener);
     }
 
 }

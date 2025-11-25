@@ -35,4 +35,9 @@ public class User {
     public List<Listing> get_listings() {
         return listings;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

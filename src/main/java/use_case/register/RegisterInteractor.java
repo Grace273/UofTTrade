@@ -38,8 +38,8 @@ public class RegisterInteractor implements RegisterInputBoundary {
 
         } else {
 
-            User newUser = new User(registerInputData.getUsername(), registerInputData.getEmail(),
-                    registerInputData.getPassword());
+            User newUser = new User(registerInputData.getUsername(), registerInputData.getPassword(),
+                    registerInputData.getEmail());
             userDataAccess.save(newUser);
             RegisterOutputData outputData = new RegisterOutputData(newUser.get_username(), newUser.get_email());
             outputBoundary.prepareSuccessView(outputData);

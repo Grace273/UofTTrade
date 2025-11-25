@@ -6,6 +6,7 @@ import use_case.create_listing.CreateListingInputBoundary;
 import use_case.create_listing.CreateListingInputData;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.List;
 
 public class CreateListingController {
@@ -19,13 +20,11 @@ public class CreateListingController {
     /**
      * Executes the Create Listing Use Case.
      * @param name the name of the listing
-     * @param image an image of the listing item
+     * @param imageBase64 an image of the listing item in Base 64
      * @param categories the categories of the listing
-     * @param owner the owner of the listing
      */
-    public void execute(String name, BufferedImage image, List<Category> categories, User owner) {
-        final CreateListingInputData createListingInputData = new CreateListingInputData(
-                name, image, categories, owner);
+    public void execute(String name, String imageBase64, List<Category> categories) throws IOException {
+        final CreateListingInputData createListingInputData = new CreateListingInputData(name, imageBase64, categories);
 
         createListingInteractor.execute(createListingInputData);
     }

@@ -52,8 +52,9 @@ public class RegisterView extends JPanel implements ActionListener, PropertyChan
         imagePanel.setLayout(new BorderLayout(0, 0));
 
         imageLabel = new JLabel("");
-        imageLabel.setIcon(new ImageIcon("C:\\Users\\humbe\\IdeaProjects\\API Starter\\src\\resources\\images\\university-of-toronto-01.jpg"));
-        imagePanel.add(imageLabel);
+        imageLabel.setIcon(
+                new ImageIcon(getClass().getResource("/images/university-of-toronto-01.jpg"))
+        );        imagePanel.add(imageLabel);
 
         registerFormPanel = new JPanel();
         registerFormPanel.setBackground(new Color(255, 255, 255));

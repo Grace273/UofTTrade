@@ -6,7 +6,8 @@ import java.util.List;
 
 /**
  * State object for the View Profile screen.
- * Stores the username, title text, listing names/photos, and any error message.
+ * Stores the username, title text, listing names/photos, the "no listings"
+ * message, and any error message.
  */
 public class ViewProfileState {
 
@@ -17,6 +18,9 @@ public class ViewProfileState {
     private List<BufferedImage> listingPhotos = new ArrayList<>();
 
     private String errorMessage = "";
+
+    // NEW: Message to display when there are zero listings
+    private String noListingsMessage = "";
 
     public String getUsername() {
         return username;
@@ -56,6 +60,15 @@ public class ViewProfileState {
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
+    }
+
+    // NEW getters/setters
+    public String getNoListingsMessage() {
+        return noListingsMessage;
+    }
+
+    public void setNoListingsMessage(String noListingsMessage) {
+        this.noListingsMessage = noListingsMessage;
     }
 }
 
