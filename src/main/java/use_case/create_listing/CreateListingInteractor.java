@@ -1,5 +1,6 @@
 package use_case.create_listing;
 
+import data_access.CreateListingDAO;
 import entity.Category;
 import entity.Listing;
 import entity.User;
@@ -22,52 +23,43 @@ public class CreateListingInteractor implements CreateListingInputBoundary{
     @Override
     public void execute(CreateListingInputData createListingInputData) throws IOException {
         final String name = createListingInputData.get_name();
-        final String photo = createListingInputData.get_img_in_Base64();
         final List<Category> categories = createListingInputData.get_categories();
-
         User user = userDataAccess.getCurrentLoggedInUser();
-//        createListingInputData.set_owner_and_listingID(user);
-
-//        if(createListingDataAccessObject.existsByListingID(createListingInputData.get_listing_id())){
-//            createListingPresenter.prepareFailView("You already have a listing with this name");
-//        }
-        if(createListingInputData.get_name() == ""){
+        if(name == null || name.isEmpty()){
             createListingPresenter.prepareFailView("A listing with a null name");
+            return;
         }
-        else if(createListingInputData.get_img_in_Base64() == ""){
-            createListingPresenter.prepareFailView("The listing image is empty");
+
+        final CreateListingOutputData createListingOutputData;
+        final Listing listing;
+
+        if (createListingInputData.get_categories().isEmpty()) {
+            listing = new Listing(createListingInputData.get_name(), user);
+            createListingOutputData = new CreateListingOutputData(
+                    createListingInputData.get_name(),
+                    user
+            );
         }
         else {
-            final CreateListingOutputData createListingOutputData;
-            final Listing listing;
-
-            if (createListingInputData.get_categories().isEmpty()) {
-                listing = new Listing(createListingInputData.get_name(), createListingInputData.get_img_in_Base64(), user);
-                createListingOutputData = new CreateListingOutputData(
-                        createListingInputData.get_name(),
-                        createListingInputData.get_img_in_Base64(),
-                        user
-                );
-            }
-            else {
-                listing = new Listing(
-                        createListingInputData.get_name(),
-                        createListingInputData.get_img_in_Base64(),
-                        createListingInputData.get_categories(),
-                        user
-                );
-                createListingOutputData = new CreateListingOutputData(
-                        createListingInputData.get_name(),
-                        createListingInputData.get_img_in_Base64(),
-                        createListingInputData.get_categories(),
-                        user
-                );
-            }
-
-            createListingDataAccessObject.save(listing);
-            createListingPresenter.prepareSuccessView(createListingOutputData);
+            listing = new Listing(
+                    createListingInputData.get_name(),
+                    createListingInputData.get_categories(),
+                    user
+            );
+            createListingOutputData = new CreateListingOutputData(
+                    createListingInputData.get_name(),
+                    createListingInputData.get_categories(),
+                    user
+            );
         }
-    }
+            try {
+                createListingDataAccessObject.save(listing);
+                createListingPresenter.prepareSuccessView(createListingOutputData);
+            }
+            catch (CreateListingDAO.DuplicateListingException e) {
+                createListingPresenter.prepareFailView("You already have a listing with this name");
+            }
+        }
 
     @Override
     public void switchToProfileView() {

@@ -21,6 +21,13 @@ public class CreateListingPresenter implements CreateListingOutputBoundary {
 
     @Override
     public void prepareSuccessView(CreateListingOutputData response) {
+        CreateListingState createState = createListingViewModel.getState();
+        createState.set_name_error(null);
+        createState.set_successMessage("Listing published successfully!");
+
+        createListingViewModel.setState(createState);
+        createListingViewModel.firePropertyChanged();
+
         // On success, switch to the View Profile view.
         final ViewProfileState viewProfileState = viewProfileViewModel.getState();
         viewProfileState.setUsername(response.get_owner().get_username());
@@ -33,14 +40,9 @@ public class CreateListingPresenter implements CreateListingOutputBoundary {
     @Override
     public void prepareFailView(String error) {
         final CreateListingState createListingState = createListingViewModel.getState();
-
-        if (error == "File must be one of jpg, jpeg, png." || error == "The listing image is empty") {
-            createListingState.set_photo_error(error);
-        }
-        else if (error == "You already have a listing with this name" || error == "A listing with a null name") {
-            createListingState.set_name_error(error);
-        }
-
+        createListingState.set_name_error(error);
+        createListingState.set_successMessage(null);
+        createListingViewModel.setState(createListingState);
         createListingViewModel.firePropertyChanged();
     }
 
@@ -49,6 +51,4 @@ public class CreateListingPresenter implements CreateListingOutputBoundary {
         viewManagerModel.setState(viewProfileViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
     }
-
-
 }

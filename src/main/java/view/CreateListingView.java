@@ -37,12 +37,6 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
 
     private final JTextField listingNameInputField = new JTextField(50);
 
-    private JLabel chosenImageLabel = new JLabel("No file selected");
-    private final JButton imgFileChooserButton = new JButton();
-    private final JFileChooser imgFileChooser = new JFileChooser();
-    private File file = null;
-    private String selectedImageBase64;
-
     private final JComboBox<String> listingCategory1ComboBox = new JComboBox(Main.categoriesNameArray);
 
     private final JComboBox<String> listingCategory2ComboBox = new JComboBox(Main.categoriesNameArray);
@@ -53,10 +47,11 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
     private CreateListingController createListingController = null;
 
     private final JLabel nameErrorField = new JLabel();
-    private final JLabel photoErrorField = new JLabel();
 
     private JLabel errorLabel = new JLabel("");
     private String errorMessage = "";
+
+    private String successMessage = "";
 
     public CreateListingView(CreateListingViewModel createListingViewModel) {
         this.createListingViewModel = createListingViewModel;
@@ -81,24 +76,6 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
         listingNameInfo.setBorder(BorderFactory.createEmptyBorder(0, 0, vSpace, 0));
         listingNameInfo.setMaximumSize(listingNameInfo.getPreferredSize());
         mainColumn.add(listingNameInfo);
-
-
-        // ---------------------- IMAGE PICKER ----------------------
-        final JPanel listingImagePanel = new JPanel();
-        listingImagePanel.setLayout(new BoxLayout(listingImagePanel, BoxLayout.Y_AXIS));
-        listingImagePanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        listingImagePanel.setBorder(BorderFactory.createEmptyBorder(0, 0, vSpace, 0));
-
-        JLabel imgLabel = new JLabel(CreateListingViewModel.IMG_LABEL);
-        imgLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, hSpace));
-
-        listingImagePanel.add(imgLabel);
-        listingImagePanel.add(imgFileChooserButton);
-        listingImagePanel.add(chosenImageLabel);
-
-        listingImagePanel.setMaximumSize(listingImagePanel.getPreferredSize());
-        mainColumn.add(listingImagePanel);
-
 
         // ---------------------- CATEGORIES ----------------------
         // label
@@ -150,95 +127,21 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
         mainColumn.add(buttons);
 
         // other
-        publishListingButton.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        CreateListingDAO createListingDataAccessObject = new CreateListingDAO();
+        publishListingButton.addActionListener(e ->{
+            String name = listingNameInputField.getText();
 
-//                        // determine what the ListingID will be
-//                        UserDataAccessObject userDataAccess = new UserDataAccessObject();
-//                        User owner = userDataAccess.getCurrentLoggedInUser();
-//                        String name = listingNameInputField.getText();
-//                        int listingID = generateListingId(owner, name);
-
-                        try {
-                            if (listingNameInputField.getText() == null || listingNameInputField.getText().length() == 0) {
-                                System.out.println(listingNameInputField.getText());
-                                errorMessage = "A listing with a null name";
-                                errorLabel.setText(errorMessage);
-                                errorLabel.setForeground(Color.RED);
-                                CreateListingState state = createListingViewModel.getState();
-                                state.set_photo_error(errorMessage);
-                                createListingViewModel.setState(state);
-                            }
-//                            else if (createListingDataAccessObject.existsByListingID(listingID)) {
-//                                errorMessage = "You already have a listing with this name";
-//                                errorLabel.setText(errorMessage);
-//                                errorLabel.setForeground(Color.RED);
-//                                CreateListingState state = createListingViewModel.getState();
-//                                state.set_photo_error(errorMessage);
-//                                createListingViewModel.setState(state);
-//                            }
-                            else if (file == null || chosenImageLabel.getText() == "No file selected") {
-                                errorMessage = "The listing image is empty";
-                                errorLabel.setText(errorMessage);
-                                errorLabel.setForeground(Color.RED);
-                                CreateListingState state = createListingViewModel.getState();
-                                state.set_photo_error(errorMessage);
-                                createListingViewModel.setState(state);
-                            }
-                            else if (file != null) {
-                                String filename = file.getName().toLowerCase();
-
-                                if (!(filename.endsWith(".jpg") || filename.endsWith(".jpeg") || filename.endsWith(".png"))) {
-                                    errorMessage = "File must be one of jpg, jpeg, png.";
-
-                                    // set photo error state
-                                    CreateListingState state = createListingViewModel.getState();
-                                    state.set_photo_error(errorMessage);
-                                    createListingViewModel.setState(state);
-
-                                    // display message on UI
-                                    errorLabel.setText(errorMessage);
-                                    errorLabel.setForeground(Color.RED);
-                                }
-                                else {
-                                    JOptionPane.showMessageDialog(null, "Listing published successfully!");
-
-                                    // save the inputs into the state
-                                    String name = listingNameInputField.getText();
-                                    String img_in_base_64 = encodeImageToBase64(file);
-                                    List<Category> categories = new ArrayList<Category>();
-                                    categories.add(Main.categoriesArray.get(0)); // always add "Select a Category" Category
-                                    categories.add(Main.categoriesArray.get(listingCategory1ComboBox.getSelectedIndex()));
-                                    categories.add(Main.categoriesArray.get(listingCategory2ComboBox.getSelectedIndex()));
-
-                                    CreateListingState state = createListingViewModel.getState();
-                                    state.set_name(name);
-                                    state.set_photo(img_in_base_64);
-                                    state.set_categories(categories);
-
-                                    //reset all input fields
-                                    errorLabel.setText("");
-                                    errorMessage = "";
-                                    listingNameInputField.setText("");
-                                    listingCategory1ComboBox.setSelectedIndex(0);
-                                    listingCategory2ComboBox.setSelectedIndex(0);
-                                    chosenImageLabel.setText("");
-
-                                    // execute the usecase
-                                    createListingController.execute(
-                                            name,
-                                            img_in_base_64,
-                                            categories
-                                    );
-                                }
-
-                            }
-                        }
-                        catch (IOException ex) {
-                            throw new RuntimeException(ex);
-                        }
+            List<Category> categories = new ArrayList<Category>();
+            categories.add(Main.categoriesArray.get(0)); // always add "Select a Category" Category
+            categories.add(Main.categoriesArray.get(listingCategory1ComboBox.getSelectedIndex()));
+            categories.add(Main.categoriesArray.get(listingCategory2ComboBox.getSelectedIndex()));
+            // execute the usecase
+                    try {
+                        createListingController.execute(
+                                name,
+                                categories
+                        );
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
                     }
                 }
         );
@@ -252,30 +155,11 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
                         listingNameInputField.setText("");
                         listingCategory1ComboBox.setSelectedIndex(0);
                         listingCategory2ComboBox.setSelectedIndex(0);
-                        chosenImageLabel.setText("");
 
                         createListingController.switchToProfileView();
                     }
                 }
         );
-
-        imgFileChooserButton.addActionListener(e -> {
-            if (imgFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                this.file = imgFileChooser.getSelectedFile();
-                chosenImageLabel.setText("Selected: " + file.getName());
-
-                // clear any error messages
-                errorLabel.setText("");
-                errorMessage = "";
-
-                try {
-                    this.selectedImageBase64 = encodeImageToBase64(file);
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-
 
         listingNameInputField.getDocument().addDocumentListener(new DocumentListener() {
 
@@ -315,20 +199,32 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
     public void propertyChange(PropertyChangeEvent evt) {
         final CreateListingState state = (CreateListingState) evt.getNewValue();
         setFields(state);
-        nameErrorField.setText(state.get_name_error());
-        photoErrorField.setText(state.get_photo_error());
-    }
+        String nameError = state.get_name_error();
+        String successMessage = state.get_successMessage();
 
-    private String encodeImageToBase64(File file) throws IOException {
-        BufferedImage image = ImageIO.read(file);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ImageIO.write(image, "jpg", baos);  // always jpg
-        return Base64.getEncoder().encodeToString(baos.toByteArray());
+        if (nameError != null && !nameError.isEmpty()) {
+            errorMessage = nameError;
+            errorLabel.setText(errorMessage);
+            errorLabel.setForeground(Color.RED);
+            return;
+        }
+        if (successMessage != null && !successMessage.isEmpty()) {
+            errorLabel.setText("");  // clear any old error
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    successMessage
+            );
+
+            // reset all input fields
+            listingNameInputField.setText("");
+            listingCategory1ComboBox.setSelectedIndex(0);
+            listingCategory2ComboBox.setSelectedIndex(0);
+        }
     }
 
     private void setFields(CreateListingState state) {
         nameErrorField.setText(state.get_name_error());
-        photoErrorField.setText(state.get_photo_error());
     }
 
     public String getViewName() { return viewName; }
@@ -336,9 +232,4 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
     public void setCreateListingController(CreateListingController createListingController) {
         this.createListingController = createListingController;
     }
-
-//    private int generateListingId(User owner, String name) {
-//        int result = owner.get_username().hashCode() + name.hashCode();
-//        return result;
-//    }
 }
