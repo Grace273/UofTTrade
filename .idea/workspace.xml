@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b6cbc8-de7a-4ddf-9a63-f74472710dcf" name="Changes" comment="Third Attempts to merge the MessagingSubpageView and update MessagingViewModel">
+    <list default="true" id="67b6cbc8-de7a-4ddf-9a63-f74472710dcf" name="Changes" comment="Modify the UserDataAccessObject and MessagingInteractor and MessagingUserDataAccessInterface to get the email from profile directly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/UserDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/UserDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/messaging/MessagingInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/messaging/MessagingInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/messaging/MessagingInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/messaging/MessagingInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/messaging/MessagingUserDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/messaging/MessagingUserDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/messaging/MessagingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/messaging/MessagingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HomepageView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="subpage_new_new" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,27 +61,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;subpage__new__new&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "Add-messaging-button-to-each-item",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main" />
@@ -130,7 +130,8 @@
       <workItem from="1764213841603" duration="152000" />
       <workItem from="1764228300236" duration="2583000" />
       <workItem from="1764267630530" duration="1686000" />
-      <workItem from="1764456539332" duration="6588000" />
+      <workItem from="1764456539332" duration="9311000" />
+      <workItem from="1764544680017" duration="5007000" />
     </task>
     <task id="LOCAL-00001" summary="Third Attempts to merge the MessagingSubpageView and update MessagingViewModel">
       <option name="closed" value="true" />
@@ -140,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764092365951</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modify the UserDataAccessObject and MessagingInteractor and MessagingUserDataAccessInterface to get the email from profile directly">
+      <option name="closed" value="true" />
+      <created>1764471183134</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764471183134</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +157,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third Attempts to merge the MessagingSubpageView and update MessagingViewModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third Attempts to merge the MessagingSubpageView and update MessagingViewModel" />
+    <MESSAGE value="Modify the UserDataAccessObject and MessagingInteractor and MessagingUserDataAccessInterface to get the email from profile directly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify the UserDataAccessObject and MessagingInteractor and MessagingUserDataAccessInterface to get the email from profile directly" />
   </component>
 </project>

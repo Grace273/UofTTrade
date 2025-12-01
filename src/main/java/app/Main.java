@@ -38,7 +38,9 @@ public class Main {
                 .addRegisterUseCase()
                 .addLoginUseCase()
                 .addViewProfileUseCase()
-                .build();
+                .addMessagingUseCase()
+                .addMessagingView()
+                        .build();
 
         application.pack();
         application.setLocationRelativeTo(null);

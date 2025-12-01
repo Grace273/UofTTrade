@@ -2,6 +2,9 @@ package view;
 
 import interface_adapter.homepage.HomepageState;
 import interface_adapter.homepage.HomepageViewModel;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.messaging.MessagingController;
+import interface_adapter.messaging.MessagingViewModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -24,6 +27,10 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
     private final String viewName = "logged in";
     private String username = "";
     private final HomepageViewModel homepageViewModel;
+
+    private MessagingController messagingController;
+    private MessagingViewModel messagingViewModel;
+    private ViewManagerModel viewManagerModel;
 
     public HomepageView(HomepageViewModel homepageViewModel) {
 
@@ -116,26 +123,57 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
 
     }
 
-    private static JPanel createItemPanel(String name, String description) {
+    private JPanel createItemPanel(String name, String description) {
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
         panel.setBackground(new Color(255, 255, 255));
         panel.setPreferredSize(new Dimension(150, 300));
+
         JLabel nameLabel = new JLabel(name);
         nameLabel.setFont(new Font("Rubik", Font.BOLD, 14));
+
         JLabel descLabel = new JLabel(description);
         descLabel.setFont(new Font("Rubik", Font.PLAIN, 10));
+
+        JButton contactButton = new JButton("Contact seller");
+        contactButton.addActionListener(event -> {
+                    if (messagingController == null || messagingViewModel == null || viewManagerModel == null) {
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Messaging is not available yet",
+                                "error",
+                                JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
+
+                    String sellerIdentifier = username;
+                    messagingController.createGmailComposeLink(sellerIdentifier);
+
+                    viewManagerModel.setState(MessagingViewModel.VIEW_NAME);
+                    viewManagerModel.firePropertyChanged();
+                });
+
         panel.add(nameLabel);
         panel.add(descLabel);
-
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(contactButton);
         return panel;
 
     }
 
     public void addViewProfileListener(ActionListener listener) {
         viewProfileButton.addActionListener(listener);
+    }
+
+    public void setMessagingDependencies(MessagingController messagingController,
+                                         MessagingViewModel messagingViewModel,
+                                         ViewManagerModel viewManagerModel) {
+        this.messagingController = messagingController;
+        this.messagingViewModel = messagingViewModel;
+        this.viewManagerModel = viewManagerModel;
     }
 
 }

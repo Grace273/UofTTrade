@@ -8,6 +8,7 @@ public class MessagingController {
     public MessagingController(MessagingInputBoundary interactor) {
         this.interactor = interactor;
     }
+
     public void createGmailComposeLink(String name){
         MessagingInputData inputData = new MessagingInputData(name);
         interactor.execute(inputData);
