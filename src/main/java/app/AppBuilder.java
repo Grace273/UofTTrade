@@ -209,6 +209,13 @@ public class AppBuilder {
 
         Runnable gotoHome = () -> {
             viewManagerModel.setState(homepageView.getViewName());
+            try {
+                final UserDataAccessObject dataAccessObject = new UserDataAccessObject();
+                homepageView.getListingPanels(dataAccessObject.getAllListings());
+            }
+            catch (IOException ex) {
+                throw new RuntimeException("Failed to update homepage.");
+            }
             viewManagerModel.firePropertyChanged();
         };
 
