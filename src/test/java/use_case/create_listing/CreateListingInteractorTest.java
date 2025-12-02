@@ -1,6 +1,5 @@
 package use_case.create_listing;
 
-import data_access.CreateListingDAO;
 import entity.Category;
 import entity.Listing;
 import entity.User;
@@ -193,6 +192,69 @@ class CreateListingInteractorTest {
         interactor.execute(inputData);
     }
 
+    @Test
+    void createListingWithNoCategoriesTest() throws IOException {
+        // Logged in user
+        ViewProfileUserDataAccessInterface viewDAO = new FakeViewProfileUserDataAccess();
+        CreateListingUserDataAccessInterface listingDAO = new FakeCreateListingUserDataAccessObject();
+
+        CreateListingInputData inputData = new CreateListingInputData(
+                "NoCategoryItem",
+                "desc ignored",
+                new ArrayList<>()      // ← EMPTY categories
+        );
+
+        var presenter = new CreateListingOutputBoundary() {
+            @Override
+            public void prepareSuccessView(CreateListingOutputData outputData) throws IOException {
+                assertEquals("NoCategoryItem", outputData.getName());
+                assertNull(outputData.getDescription());   // expected for this constructor
+                assertTrue(outputData.getCategories().isEmpty());
+                assertEquals("grace123", outputData.get_owner().get_username());
+
+                assertTrue(listingDAO.existById(outputData.getListingID()+""));
+            }
+
+            @Override public void prepareFailView(String errorMessage) { fail(); }
+            @Override public void switchToProfileView() {
+                // this is expected, switchToProfileViewTest also tests this
+            }
+        };
+
+        CreateListingInputBoundary interactor =
+                new CreateListingInteractor(listingDAO, presenter, viewDAO);
+
+        interactor.execute(inputData);
+    }
+
+
+    @Test
+    void switchToProfileViewTest() {
+        ViewProfileUserDataAccessInterface viewDAO = new FakeViewProfileUserDataAccess();
+        CreateListingUserDataAccessInterface listingDAO = new FakeCreateListingUserDataAccessObject();
+
+        class TestPresenter implements CreateListingOutputBoundary {
+            boolean called = false;
+
+            @Override public void prepareSuccessView(CreateListingOutputData o) {
+                // this is expected
+            }
+            @Override public void prepareFailView(String errorMessage) {
+                // this is expected
+            }
+            @Override public void switchToProfileView() { called = true; }
+        }
+
+        TestPresenter presenter = new TestPresenter();
+
+        CreateListingInputBoundary interactor =
+                new CreateListingInteractor(listingDAO, presenter, viewDAO);
+
+        interactor.switchToProfileView();
+
+        assertTrue(presenter.called);
+    }
+
     @NotNull
     private CreateListingInputData getCreateListingInputData(
             LoginUserDataAccessInterface userDataAccessObject) throws IOException {
@@ -232,27 +294,18 @@ class CreateListingInteractorTest {
     }
 
     public static class FakeLoginUserDataAccessObject implements LoginUserDataAccessInterface {
-
-        private final Map<String, User> users = new HashMap<>();
-        private User currentUser;
-
-        public FakeLoginUserDataAccessObject() {
-            currentUser = new User("grace123", "gracepw", "grace@gmail.com");
-            users.put("grace123", currentUser);
-        }
-
         @Override
-        public boolean userExists(String userIdentifier) throws IOException {
+        public boolean userExists(String userIdentifier) {
             return false;
         }
 
         @Override
-        public User getUser(String userIdentifier) throws IOException {
+        public User getUser(String userIdentifier) {
             return null;
         }
 
         @Override
-        public void save(User user) throws IOException {
+        public void save(User user) {
             // nothing to add since login not tested
         }
 
@@ -283,11 +336,7 @@ class CreateListingInteractorTest {
     }
 
     public static class FakeViewProfileUserDataAccess implements ViewProfileUserDataAccessInterface {
-        private User currentUser;
-
-        public FakeViewProfileUserDataAccess() {
-            currentUser = new User("grace123", "gracepw", "grace@gmail.com");
-        }
+        private final User currentUser = new User("grace123", "gracepw", "grace@gmail.com");
 
         @Override
         public User getCurrentLoggedInUser() {
@@ -319,7 +368,7 @@ class CreateListingInteractorTest {
         }
 
         @Override
-        public void save(Listing listing) throws IOException, DuplicateListingException {
+        public void save(Listing listing) throws DuplicateListingException {
             if (listings.containsKey(listing.get_listingId()+"")) {
                 throw new CreateListingUserDataAccessInterface.DuplicateListingException(listing.get_listingId()+"");
             }
@@ -328,7 +377,7 @@ class CreateListingInteractorTest {
         }
 
         @Override
-        public boolean existById(String listingID) throws IOException {
+        public boolean existById(String listingID) {
             return listings.containsKey(listingID);
         }
 
@@ -337,7 +386,7 @@ class CreateListingInteractorTest {
          * @return the generated ID
          */
 
-        private int generateListingId(String ownerUsername, String name) throws IOException {
+        private int generateListingId(String ownerUsername, String name) {
             return ownerUsername.hashCode() + name.hashCode();
         }
     }

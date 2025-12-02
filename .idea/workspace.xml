@@ -4,37 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2e5f196-2657-481f-bdfd-ed5a5a6338be" name="Changes" comment="updated owner in state and presenter">
+    <list default="true" id="c2e5f196-2657-481f-bdfd-ed5a5a6338be" name="Changes" comment="added createListingWithNoCategoriesTest and switchToProfileViewTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Messaging.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Messaging.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingViewModel$State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingViewModel$State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/messaging/MessagingViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_profile/ViewProfileState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/messaging/MessagingOutputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_profile/ViewProfileInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MessagingSubpageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MessagingSubpageView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SearchListingsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SearchListingsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/CreateListingInteractorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/ViewProfileInteractorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/ViewProfileInteractorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/register/RegisterInteractorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_listing/CreateListingInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/create_listing/CreateListingInteractorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="TutorialBot77-view-listing-test-patch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,8 +36,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/Grace273/UofTTrade",
-    "accountId": "91c75774-f1b2-4529-a748-44c884fe0fbc"
+    "url": "https://github.com/Grace273/UofTTrade.git",
+    "accountId": "41ef5868-ded7-44a0-90f5-6873586d9f14"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -79,12 +51,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.All in UofTTrade.executor": "Run",
+    "JUnit.CreateListingInteractorTest.executor": "Run",
     "JUnit.ViewListingInteractorTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "refresh-homepage",
+    "git-widget-placeholder": "create-listing-test",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,6 +70,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -102,8 +78,47 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/target/classes" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="use_case.create_listing" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CreateListingInteractorTest">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Main" />
+      <module name="UofTTrade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in UofTTrade" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UofTTrade" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateListingInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UofTTrade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.create_listing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.create_listing" />
+      <option name="MAIN_CLASS_NAME" value="use_case.create_listing.CreateListingInteractorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ViewListingInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UofTTrade" />
       <extension name="coverage">
@@ -119,8 +134,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CreateListingInteractorTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in UofTTrade" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ViewListingInteractorTest" />
       </list>
     </recent_temporary>
@@ -128,8 +156,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
-        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -200,7 +227,8 @@
     <MESSAGE value="update delete listings use case" />
     <MESSAGE value="updated output data and interacter to hold owner" />
     <MESSAGE value="updated owner in state and presenter" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated owner in state and presenter" />
+    <MESSAGE value="added createListingWithNoCategoriesTest and switchToProfileViewTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added createListingWithNoCategoriesTest and switchToProfileViewTest" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -214,6 +242,9 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/UofTTrade$CreateListingInteractorTest.ic" NAME="CreateListingInteractorTest Coverage Results" MODIFIED="1764718892216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>use_case.create_listing.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/UofTTrade$ViewListingInteractorTest.ic" NAME="ViewListingInteractorTest Coverage Results" MODIFIED="1764655448321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>use_case.view_listing.*</FILTER>
     </SUITE>
