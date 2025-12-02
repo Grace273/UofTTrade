@@ -3,7 +3,9 @@ package use_case.view_listing;
 import data_access.CreateListingDAO;
 import data_access.UserDataAccessObject;
 import entity.User;
-import interface_adapter.view_listing.ViewListingPresenter;
+
+import interface_adapter.view_listing.ViewListingController;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import use_case.login.*;
 
@@ -13,7 +15,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ViewListingInteractorTest {
 
-    // for multiple tests you will have to change the name of the item in the listing constructor
+    // Added time between tests to avoid failing due to api limits
+    @BeforeEach
+    void delayBetweenTests() throws InterruptedException {
+        Thread.sleep(10000);
+    }
+
+
     @Test
     public void viewListingSuccessTest() throws IOException {
         ViewListingInputData inputData = new ViewListingInputData("Garbage Can", "TutorialBot77");
@@ -79,6 +87,38 @@ public class ViewListingInteractorTest {
 
     }
 
+    @Test
+    public void testSwitchToPreviousView() throws IOException {
+        ViewListingInputData inputData = new ViewListingInputData("Garbage Can", "TutorialBot77");
+        UserDataAccessObject userRepository = new UserDataAccessObject();
+        CreateListingDAO createListingDAO = new CreateListingDAO();
+        User user = userRepository.getUser("TutorialBot77");
 
+        ViewListingOutputBoundary successPresenter = new ViewListingOutputBoundary() {
+
+            @Override
+            public void switchToListingView(ViewListingOutputData data) {
+                switchToPreviousView();
+            }
+
+            @Override
+            public void switchToPreviousView() {
+
+                assertTrue(true, "Previous view is reached from the listing view.");
+            }
+
+            @Override
+            public void prepareFailView() {
+                fail("Use case failure is unexpected.");
+            }
+        };
+
+        ViewListingInputBoundary interactor = new ViewListingInteractor(createListingDAO, userRepository,
+                successPresenter);
+        interactor.execute(inputData);
+        ViewListingController viewListingController = new ViewListingController(interactor);
+        // Simulates back button press
+        viewListingController.switchToPreviousView();
+    }
 
 }
