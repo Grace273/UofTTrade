@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2e5f196-2657-481f-bdfd-ed5a5a6338be" name="Changes" comment="update delete listings use case">
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/CreateListingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/CreateListingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsOutputData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +35,12 @@
     &quot;assignee&quot;: &quot;JunzzU&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Grace273/UofTTrade.git&quot;,
-    &quot;accountId&quot;: &quot;a95c1ddd-3999-4c21-afff-442a25a542b5&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Grace273/UofTTrade.git",
+    "accountId": "4bb09b2a-bbdf-400e-9bce-d0ad98023aa8"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -54,13 +56,16 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "fix-update-listing",
+    "git-widget-placeholder": "searchlistingIm",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -69,21 +74,11 @@
       <recent name="$PROJECT_DIR$/target/classes" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
       </set>
     </attachedChunks>
   </component>
@@ -95,6 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1764538482399</updated>
       <workItem from="1764538485495" duration="8695000" />
+      <workItem from="1764633473958" duration="337000" />
     </task>
     <task id="LOCAL-00001" summary="Solve merging issue">
       <option name="closed" value="true" />
