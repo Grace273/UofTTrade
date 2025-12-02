@@ -22,7 +22,6 @@ public class GmailMessagingFactory implements MessagingFactory {
                 + "&su=" + encSubject
                 + "&body=" + encBody;
 
-        // "gmail" 作为 source，表示这是通过 Gmail 渠道创建的 messaging
         return new Messaging(name, url, "gmail");
     }
 

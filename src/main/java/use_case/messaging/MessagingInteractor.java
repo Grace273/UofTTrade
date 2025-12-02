@@ -36,7 +36,7 @@ public class MessagingInteractor implements MessagingInputBoundary {
                 presenter.presentFailureView("Invalid email address for user: " + name);
             }
             else {
-                // ★ 关键：不再自己拼 URL，而是交给 factory
+                // take it into Messaging factory method
                 final Messaging messaging = messagingFactory.createMessaging(name, email);
 
                 final MessagingOutputData outputData =
