@@ -58,11 +58,11 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         topPanel.add(new JLabel("Cat:"));
         topPanel.add(categoryBox);
         topPanel.add(searchButton);
+        topPanel.add(backButton);
         add(topPanel, BorderLayout.NORTH);
 
         // --- Results Panel ---
-        // Using FlowLayout to match Homepage behavior
-        resultsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+        resultsPanel.setLayout(new GridLayout(0, 4, 10, 10));
         resultsPanel.setBackground(new Color(245, 245, 245));
 
         JScrollPane scrollPane = new JScrollPane(resultsPanel);
