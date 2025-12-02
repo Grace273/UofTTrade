@@ -1,17 +1,24 @@
 package use_case;
 
 import data_access.UserDataAccessObject;
-import entity.Messaging;
+import entity.GmailMessagingFactory;
+import entity.MessagingFactory;
 import entity.User;
 import org.junit.jupiter.api.Test;
-import use_case.messaging.*;
+import use_case.messaging.MessagingInputBoundary;
+import use_case.messaging.MessagingInputData;
+import use_case.messaging.MessagingInteractor;
+import use_case.messaging.MessagingOutputBoundary;
+import use_case.messaging.MessagingOutputData;
+import use_case.messaging.MessagingUserDataAccessInterface;
+
 import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MessagingInteratorTest {
     // get the email from the database and verify that Presenter get the email successfully.
     @Test
-
     public void successUseEmailFromDatabase() throws IOException {
         // A successful test when the seller implements a correct email address.
         UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
@@ -40,14 +47,17 @@ public class MessagingInteratorTest {
             public void presentFailureView(String errorMessage) {
                 // Invalid path as the username and email both occurred correctly, so a successful view should show up.
                 fail("it is unexpectedly present as the email is correct.");
-
             }
-
         };
-        MessagingInputBoundary interactor = new MessagingInteractor(userDataAccessObject, presenter);
+
+        MessagingFactory factory = new GmailMessagingFactory();
+        MessagingInputBoundary interactor =
+                new MessagingInteractor(userDataAccessObject, presenter, factory);
         interactor.execute(inputData);
     }
-    public  void invalidEmailFromDatabase() throws IOException {
+
+    @Test
+    public void invalidEmailFromDatabase() throws IOException {
         // When the user types an incorrect email
         UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
         MessagingInputData inputData = new MessagingInputData("Kael", "123@!");
@@ -57,6 +67,7 @@ public class MessagingInteratorTest {
                 // Unlikely to happen as the email is invalid
                 fail("It is unexpectedly present as the email address is invalid");
             }
+
             @Override
             public void presentFailureView(String errorMessage) {
                 // The isPlasuibleEmail method should return False, so return early.
@@ -64,27 +75,31 @@ public class MessagingInteratorTest {
                 assertFalse(errorMessage.isEmpty());
             }
         };
-        MessagingInputBoundary interactor = new MessagingInteractor(userDataAccessObject, presenter);
+
+        MessagingFactory factory = new GmailMessagingFactory();
+        MessagingInputBoundary interactor =
+                new MessagingInteractor(userDataAccessObject, presenter, factory);
         interactor.execute(inputData);
     }
 
-    class StubMessagingDao implements  MessagingUserDataAccessInterface{
+    class StubMessagingDao implements MessagingUserDataAccessInterface {
         // A Stub DAO class for a null or empty email
         boolean getCalled = false;
+
         @Override
-        public String getValidEmailForUser(String username) {
+        public String getValidEmailForUser(String username) throws IOException {
             getCalled = true;
             return "stub@mail.com";
         }
+
         @Override
         public boolean isPlasuibleEmail(String email) {
             return true;
-
         }
     }
 
     @Test
-    public void nullEmailFromDAO_success() {
+    public void nullEmailFromDAO_success() throws IOException {
         // When the inputdata.getEmail() is null or empty, trying to get the email through DAO.
         StubMessagingDao stubMessagingDao = new StubMessagingDao();
         MessagingInputData inputData = new MessagingInputData("Kael", null);
@@ -93,31 +108,38 @@ public class MessagingInteratorTest {
             public void presentSuccessView(MessagingOutputData data) {
                 // the Input email DNE, but through the DAO, we get the email directly, so it will call DAO and success.
                 assertEquals("Kael", data.getName());
-                assertTrue(stubMessagingDao.getCalled,"must implement getValidEmailForUser");
+                assertTrue(stubMessagingDao.getCalled, "must implement getValidEmailForUser");
                 assertTrue(data.getNormalizedurl().contains("stub%40mail.com"));
             }
+
             @Override
             public void presentFailureView(String errorMessage) {
                 // Unable to happen
                 fail("No email return from DAO");
             }
         };
-        MessagingInputBoundary interactor = new MessagingInteractor(stubMessagingDao, presenter);
+
+        MessagingFactory factory = new GmailMessagingFactory();
+        MessagingInputBoundary interactor =
+                new MessagingInteractor(stubMessagingDao, presenter, factory);
         interactor.execute(inputData);
     }
-    class StubMessagingDAO_NullEmail implements  MessagingUserDataAccessInterface{
+
+    class StubMessagingDAO_NullEmail implements MessagingUserDataAccessInterface {
         //No email found in both input and DAO
         @Override
-        public String getValidEmailForUser(String username) {
+        public String getValidEmailForUser(String username) throws IOException {
             return null;
         }
+
         @Override
         public boolean isPlasuibleEmail(String email) {
             return false;
         }
     }
+
     @Test
-    public void nullEmailFromDAO_fail() {
+    public void nullEmailFromDAO_fail() throws IOException {
         StubMessagingDAO_NullEmail DAO = new StubMessagingDAO_NullEmail();
         MessagingInputData inputData = new MessagingInputData("Kael", null);
         MessagingOutputBoundary presenter = new MessagingOutputBoundary() {
@@ -126,6 +148,7 @@ public class MessagingInteratorTest {
                 // No email from both path
                 fail("it is unexpectedly present as there is no email");
             }
+
             @Override
             public void presentFailureView(String errorMessage) {
                 // Check that it pass the input data and DAO doesn't have either.
@@ -133,23 +156,28 @@ public class MessagingInteratorTest {
                 assertTrue(errorMessage.contains("Invalid email address for user: Kael"));
             }
         };
-        MessagingInputBoundary interactor = new MessagingInteractor(DAO, presenter);
+
+        MessagingFactory factory = new GmailMessagingFactory();
+        MessagingInputBoundary interactor =
+                new MessagingInteractor(DAO, presenter, factory);
         interactor.execute(inputData);
     }
 
-    class StubMessagingDAO_ExceptionEmail implements  MessagingUserDataAccessInterface{
+    class StubMessagingDAO_ExceptionEmail implements MessagingUserDataAccessInterface {
         // If there is an exception occurred
         @Override
-        public String getValidEmailForUser(String username) {
-            throw new RuntimeException("RuntimeException");
+        public String getValidEmailForUser(String username) throws IOException {
+            throw new IOException("RuntimeException");
         }
+
         @Override
         public boolean isPlasuibleEmail(String email) {
             return true;
         }
     }
+
     @Test
-    public void DAOThrowsException(){
+    public void DAOThrowsException() throws IOException {
         StubMessagingDAO_ExceptionEmail DAO = new StubMessagingDAO_ExceptionEmail();
         MessagingInputData inputData = new MessagingInputData("Kael", null);
         MessagingOutputBoundary presenter = new MessagingOutputBoundary() {
@@ -158,6 +186,7 @@ public class MessagingInteratorTest {
                 // Exception, how could it be to success?
                 fail("it is unexpectedly present as it is exception");
             }
+
             @Override
             public void presentFailureView(String errorMessage) {
                 // Check Exception occurs
@@ -165,7 +194,10 @@ public class MessagingInteratorTest {
                 assertTrue(errorMessage.contains("Failed to create Gmail link"));
             }
         };
-        MessagingInputBoundary interactor = new MessagingInteractor(DAO, presenter);
+
+        MessagingFactory factory = new GmailMessagingFactory();
+        MessagingInputBoundary interactor =
+                new MessagingInteractor(DAO, presenter, factory);
         interactor.execute(inputData);
     }
 }

@@ -1,33 +1,31 @@
 package use_case.messaging;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
+import entity.Messaging;
+import entity.MessagingFactory;
+
+import java.io.IOException;
 
 /**
- * The interactor for the Messaging use case.
- * The class implements the application logic of generating a gmail link to compose message to the seller.
- * It verifies that a corrected formated email is provided and retrieves if none email is provided.
- * Then it composes a gmail url for the email given.
+ * Interactor for the Messaging use case.
  */
 public class MessagingInteractor implements MessagingInputBoundary {
+
     private final MessagingUserDataAccessInterface userDataAccess;
     private final MessagingOutputBoundary presenter;
+    private final MessagingFactory messagingFactory;
 
-    /**
-     * Constructs a MessagingInteractor with the data access and output.
-     * @param userDataAccess the DAO to retrieve or verify the email, must not be null.
-     * @param presenter the output boundary used to present success or failure view, must not be null.
-     */
     public MessagingInteractor(MessagingUserDataAccessInterface userDataAccess,
-                               MessagingOutputBoundary presenter) {
+                               MessagingOutputBoundary presenter,
+                               MessagingFactory messagingFactory) {
         this.userDataAccess = userDataAccess;
         this.presenter = presenter;
+        this.messagingFactory = messagingFactory;
     }
 
     @Override
     public void execute(MessagingInputData inputData) {
         try {
-            String name = inputData.getUsername();
+            final String name = inputData.getUsername();
             String email = inputData.getEmail();
 
             if (email == null || email.isBlank()) {
@@ -36,34 +34,19 @@ public class MessagingInteractor implements MessagingInputBoundary {
 
             if (email == null || !userDataAccess.isPlasuibleEmail(email)) {
                 presenter.presentFailureView("Invalid email address for user: " + name);
-                return;
             }
+            else {
+                // take it into Messaging factory method
+                final Messaging messaging = messagingFactory.createMessaging(name, email);
 
-            String gmailUrl = buildGmailComposeUrl(
-                    email,
-                    "Contact " + name,
-                    ""
-            );
+                final MessagingOutputData outputData =
+                        new MessagingOutputData(messaging.getName(), messaging.getUrl());
 
-            MessagingOutputData outputData =
-                    new MessagingOutputData(name, gmailUrl);
-
-            presenter.presentSuccessView(outputData);
-
-        } catch (Exception e) {
-            presenter.presentFailureView("Failed to create Gmail link: " + e.getMessage());
+                presenter.presentSuccessView(outputData);
+            }
+        }
+        catch (IOException exception) {
+            presenter.presentFailureView("Failed to create Gmail link: " + exception.getMessage());
         }
     }
-
-    private String buildGmailComposeUrl(String receiver, String subject, String body) {
-        final String encTo = URLEncoder.encode(receiver == null ? "" : receiver, StandardCharsets.UTF_8);
-        final String encSubject = URLEncoder.encode(subject == null ? "" : subject, StandardCharsets.UTF_8);
-        final String encBody = URLEncoder.encode(body == null ? "" : body, StandardCharsets.UTF_8);
-
-        return "https://mail.google.com/mail/?view=cm&fs=1"
-                + "&to=" + encTo
-                + "&su=" + encSubject
-                + "&body=" + encBody;
-    }
 }
-

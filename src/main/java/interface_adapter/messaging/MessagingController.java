@@ -12,7 +12,7 @@ public class MessagingController {
     /**
      * The interactor responsible for executing the Messaging use case.
      */
-    public final MessagingInputBoundary interactor;
+    private final MessagingInputBoundary interactor;
 
     /**
      * Constructs a Messaging Controller with the interactor.
@@ -28,7 +28,7 @@ public class MessagingController {
      * @param email the email of the seller.
      */
     public void createGmailComposeLink(String name, String email) {
-        MessagingInputData inputData = new MessagingInputData(name, email);
+        final MessagingInputData inputData = new MessagingInputData(name, email);
         interactor.execute(inputData);
     }
 }

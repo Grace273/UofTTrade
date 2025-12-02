@@ -21,7 +21,7 @@ public class MessagingPresenter implements MessagingOutputBoundary {
     @Override
     public void presentSuccessView(MessagingOutputData data) {
 
-        MessagingViewModel.State state = viewModel.getState();
+        final MessagingViewModel.State state = viewModel.getState();
         state.title = "Email " + data.getName();
         state.gmailUrl = data.getNormalizedurl();
         state.error = null;
@@ -32,7 +32,9 @@ public class MessagingPresenter implements MessagingOutputBoundary {
 
     @Override
     public void presentFailureView(String errorMessage) {
-        MessagingViewModel.State state = viewModel.getState();
+        final MessagingViewModel.State state = viewModel.getState();
+        state.gmailUrl = null;
+        state.title = "Unable to send email";
         state.error = errorMessage;
 
         viewModel.setState(state);

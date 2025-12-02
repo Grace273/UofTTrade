@@ -6,8 +6,8 @@ import entity.User;
 import org.junit.jupiter.api.Test;
 import use_case.search.*;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,8 +20,6 @@ public class SearchListingsInteractorTest {
         SearchListingsDataAccessInterface searchDAO = new SearchListingsDataAccessInterface() {
             @Override
             public List<Listing> findByKeywordAndCategory(String keyword, String categoryName) {
-                // This method is not the primary one used by the interactor logic shown,
-                // but we can implement it for completeness or return empty.
                 return new ArrayList<>();
             }
 
@@ -157,6 +155,140 @@ public class SearchListingsInteractorTest {
 
         SearchListingsInteractor interactor = new SearchListingsInteractor(searchDAO, searchPresenter);
         SearchListingsInputData inputData = new SearchListingsInputData("fddSSASAAasas", "Select a Category");
+        interactor.execute(inputData);
+    }
+
+    @Test
+    public void searchByCategoryOnlyTest() {
+        // Tests searching with no keyword, only a specific category
+        SearchListingsDataAccessInterface searchDAO = new SearchListingsDataAccessInterface() {
+            @Override
+            public List<Listing> findByKeywordAndCategory(String keyword, String categoryName) { return new ArrayList<>(); }
+            @Override
+            public List<Listing> findByKeyword(String keyword) { return new ArrayList<>(); }
+
+            @Override
+            public List<Listing> findByCategory(String categoryName) {
+                List<Listing> listings = new ArrayList<>();
+                if ("Furniture".equals(categoryName)) {
+                    User owner = new User("User1", "pw", "mail");
+                    // NOTE: Passing empty list for categories to test "Uncategorized" logic in extractCategoryNames
+                    listings.add(new Listing("Chair", "Nice chair", new ArrayList<>(), owner));
+                }
+                return listings;
+            }
+
+            @Override
+            public List<String> getAllCategories() { return List.of("Furniture", "Tech"); }
+        };
+
+        SearchListingsOutputBoundary searchPresenter = new SearchListingsOutputBoundary() {
+            @Override
+            public void prepareSuccessView(SearchListingsOutputData outputData) {
+                assertFalse(outputData.getResults().isEmpty());
+                // Verify empty keyword was handled
+                assertEquals("", outputData.getKeyword());
+                assertEquals("Furniture", outputData.getCategoryName());
+                // Verify handling of empty category list -> "Uncategorized"
+                List<String> resultCats = outputData.getResults().get(0).getCategories();
+                assertEquals(1, resultCats.size());
+                assertEquals("Uncategorized", resultCats.get(0));
+            }
+
+            @Override
+            public void prepareFailView(String errorMessage, String keyword, String categoryName) {
+                fail("Use case fail is unexpected.");
+            }
+        };
+
+        SearchListingsInteractor interactor = new SearchListingsInteractor(searchDAO, searchPresenter);
+        // Empty keyword, explicit category
+        SearchListingsInputData inputData = new SearchListingsInputData("", "Furniture");
+        interactor.execute(inputData);
+    }
+
+    @Test
+    public void testNullInputDefaultsToFirstCategory() {
+        // Tests null inputs for keyword and category
+        SearchListingsDataAccessInterface searchDAO = new SearchListingsDataAccessInterface() {
+            @Override
+            public List<Listing> findByKeywordAndCategory(String keyword, String categoryName) { return new ArrayList<>(); }
+            @Override
+            public List<Listing> findByKeyword(String keyword) { return new ArrayList<>(); }
+
+            @Override
+            public List<Listing> findByCategory(String categoryName) {
+                List<Listing> listings = new ArrayList<>();
+                // Logic should default to first category "Tech"
+                if ("Tech".equals(categoryName)) {
+                    User owner = new User("User1", "pw", "mail");
+                    // NOTE: Passing NULL for categories to test "Uncategorized" logic in extractCategoryNames
+                    listings.add(new Listing("Laptop", "Fast", null, owner));
+                }
+                return listings;
+            }
+
+            @Override
+            public List<String> getAllCategories() {
+                // "Tech" is index 0
+                return List.of("Tech", "Furniture");
+            }
+        };
+
+        SearchListingsOutputBoundary searchPresenter = new SearchListingsOutputBoundary() {
+            @Override
+            public void prepareSuccessView(SearchListingsOutputData outputData) {
+                // Verify category defaulted to "Tech"
+                assertEquals("Tech", outputData.getCategoryName());
+                // Verify null keyword became empty string
+                assertEquals("", outputData.getKeyword());
+                // Verify null category list became "Uncategorized"
+                assertEquals("Uncategorized", outputData.getResults().get(0).getCategories().get(0));
+            }
+
+            @Override
+            public void prepareFailView(String errorMessage, String keyword, String categoryName) {
+                fail("Use case fail is unexpected.");
+            }
+        };
+
+        SearchListingsInteractor interactor = new SearchListingsInteractor(searchDAO, searchPresenter);
+        // Pass nulls to test normalization
+        SearchListingsInputData inputData = new SearchListingsInputData(null, null);
+        interactor.execute(inputData);
+    }
+
+    @Test
+    public void testResolveCategoryFailure() {
+        // Tests when no category is provided AND DAO has no categories to default to
+        SearchListingsDataAccessInterface searchDAO = new SearchListingsDataAccessInterface() {
+            @Override
+            public List<Listing> findByKeywordAndCategory(String keyword, String categoryName) { return new ArrayList<>(); }
+            @Override
+            public List<Listing> findByKeyword(String keyword) { return new ArrayList<>(); }
+            @Override
+            public List<Listing> findByCategory(String categoryName) { return new ArrayList<>(); }
+            @Override
+            public List<String> getAllCategories() { return new ArrayList<>(); } // Empty DB
+        };
+
+        SearchListingsOutputBoundary searchPresenter = new SearchListingsOutputBoundary() {
+            @Override
+            public void prepareSuccessView(SearchListingsOutputData outputData) {
+                fail("Should have failed as no categories exist to fall back to.");
+            }
+
+            @Override
+            public void prepareFailView(String errorMessage, String keyword, String categoryName) {
+                // Category resolution should result in empty string
+                assertEquals("", categoryName);
+                assertEquals("", keyword);
+            }
+        };
+
+        SearchListingsInteractor interactor = new SearchListingsInteractor(searchDAO, searchPresenter);
+        // "   " should trim to empty, triggering default logic, which fails due to empty DAO
+        SearchListingsInputData inputData = new SearchListingsInputData("   ", "   ");
         interactor.execute(inputData);
     }
 }
