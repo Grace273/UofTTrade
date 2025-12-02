@@ -1,6 +1,7 @@
 package use_case.update_listing;
-import entity.User;
+
 import entity.Listing;
+import entity.User;
 
 public class UpdateListingInputData {
     private final boolean isDelete;
@@ -13,7 +14,15 @@ public class UpdateListingInputData {
         this.listing = listing;
     }
 
-    Boolean getDelete() { return isDelete; }
-    User getUser() { return user; }
-    Listing getListing() { return listing; }
+    Boolean getDelete() {
+        return isDelete;
+    }
+
+    User getUser() {
+        return user;
+    }
+
+    Listing getListing() {
+        return listing;
+    }
 }
