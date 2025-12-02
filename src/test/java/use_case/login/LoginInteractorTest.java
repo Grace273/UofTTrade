@@ -1,0 +1,110 @@
+package use_case.login;
+
+import data_access.UserDataAccessObject;
+import entity.User;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class LoginInteractorTest {
+
+    @Test
+    void successTest() throws IOException {
+        LoginInputData inputData = new LoginInputData("James", "password");
+        LoginUserDataAccessInterface userRepository = new UserDataAccessObject();
+
+        // For the success test, we need to add Paul to the data access repository before we log in.
+        User user = new User("James", "password", "james@gmail.com");
+        userRepository.save(user);
+
+        // This creates a successPresenter that tests whether the test case is as we expect.
+        LoginOutputBoundary successPresenter = new LoginOutputBoundary() {
+            @Override
+            public void prepareSuccessView(LoginOutputData user) {
+                assertEquals("James", user.getUsername());
+                assertEquals("James", userRepository.getUsername());
+                assertEquals("james@gmail.com", userRepository.getEmail());
+                assertEquals("james@gmail.com", user.getEmail());
+            }
+
+            @Override
+            public void prepareFailView(String error) {
+                fail("Use case failure is unexpected.");
+            }
+
+            @Override
+            public void switchToRegisterView() {
+                fail("Switch to the register view is not expected.");
+            }
+        };
+
+        LoginInputBoundary interactor = new LoginInteractor(userRepository, successPresenter);
+        interactor.execute(inputData);
+    }
+
+
+    @Test
+    void failurePasswordMismatchTest() throws IOException {
+        LoginInputData inputData = new LoginInputData("Paul", "wrong");
+        LoginUserDataAccessInterface userRepository = new UserDataAccessObject();
+
+        // For this failure test, we need to add Paul to the data access repository before we log in, and
+        // the passwords should not match.
+        User user = new User("Paul", "password", "paul@gmail.com");
+        userRepository.save(user);
+
+        // This creates a presenter that tests whether the test case is as we expect.
+        LoginOutputBoundary failurePresenter = new LoginOutputBoundary() {
+            @Override
+            public void prepareSuccessView(LoginOutputData user) {
+                // this should never be reached since the test case should fail
+                fail("Use case success is unexpected.");
+            }
+
+            @Override
+            public void prepareFailView(String error) {
+                assertEquals("Incorrect password.", error);
+            }
+
+            @Override
+            public void switchToRegisterView() {
+                fail("Switch to the register view is not expected.");
+            }
+        };
+
+        LoginInputBoundary interactor = new LoginInteractor(userRepository, failurePresenter);
+        interactor.execute(inputData);
+    }
+
+    @Test
+    void failureUserDoesNotExistTest() throws IOException {
+        LoginInputData inputData = new LoginInputData("Jimmy", "password");
+        LoginUserDataAccessInterface userRepository = new UserDataAccessObject();
+
+        // Add Paul to the repo so that when we check later they already exist
+
+        // This creates a presenter that tests whether the test case is as we expect.
+        LoginOutputBoundary failurePresenter = new LoginOutputBoundary() {
+            @Override
+            public void prepareSuccessView(LoginOutputData user) {
+                // this should never be reached since the test case should fail
+                fail("Use case success is unexpected.");
+            }
+
+            @Override
+            public void prepareFailView(String error) {
+                assertEquals("Account does not exist.", error);
+            }
+
+            @Override
+            public void switchToRegisterView() {
+                fail("Switch to the register view is not expected.");
+            }
+        };
+
+        LoginInputBoundary interactor = new LoginInteractor(userRepository, failurePresenter);
+        interactor.execute(inputData);
+    }
+}

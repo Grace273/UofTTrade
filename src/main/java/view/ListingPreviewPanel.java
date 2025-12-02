@@ -4,7 +4,9 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.messaging.MessagingController;
 import interface_adapter.messaging.MessagingViewModel;
 import interface_adapter.view_listing.ViewListingController;
+import interface_adapter.view_listing.ViewListingPresenter;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.awt.event.MouseAdapter;
@@ -86,8 +88,9 @@ public class ListingPreviewPanel extends JPanel {
                 try {
                     viewListingController.execute((String) listing.get("Name"), (String) listing.get("Owner"));
                 }
-                catch (IOException ex) {
-                    throw new RuntimeException(ex);
+                catch (ViewListingPresenter.ListingNotFoundException | IOException _) {
+                    JOptionPane.showMessageDialog(null, "The listing you're looking for does "
+                            + "not exist", "Listing Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         };
