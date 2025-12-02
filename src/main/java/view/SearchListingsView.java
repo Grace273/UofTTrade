@@ -53,9 +53,9 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
             }
         }
 
-        topPanel.add(new JLabel("Key:"));
+        topPanel.add(new JLabel("Keyword:"));
         topPanel.add(keywordField);
-        topPanel.add(new JLabel("Cat:"));
+        topPanel.add(new JLabel("Category:"));
         topPanel.add(categoryBox);
         topPanel.add(searchButton);
         topPanel.add(backButton);
