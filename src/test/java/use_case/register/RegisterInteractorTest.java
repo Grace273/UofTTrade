@@ -78,7 +78,7 @@ class RegisterInteractorTest {
                 "password", "password");
         RegisterUserDataAccessInterface userRepository = new UserDataAccessObject();
 
-        // Add Paul to the repo so that when we check later they already exist
+        // Add user to the repo so that when we check later they already exist
         User user = new User("Mike", "password", "mike@gmail.com");
         userRepository.save(user);
 
