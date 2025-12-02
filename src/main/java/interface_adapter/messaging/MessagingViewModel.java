@@ -8,6 +8,9 @@ import interface_adapter.ViewModel;
 public class MessagingViewModel extends ViewModel<MessagingViewModel.State> {
     public static final String VIEW_NAME = "messaging";
 
+    /**
+     *  The State imported by the View model.
+     */
     public static class State {
         public String title;
         public String gmailUrl;
@@ -17,7 +20,7 @@ public class MessagingViewModel extends ViewModel<MessagingViewModel.State> {
     public MessagingViewModel() {
         super(VIEW_NAME);
 
-        State initial = new State();
+        final State initial = new State();
         initial.title = "";
         initial.gmailUrl = null;
         initial.error = null;
