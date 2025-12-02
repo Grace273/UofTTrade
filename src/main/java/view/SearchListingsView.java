@@ -1,8 +1,14 @@
 package view;
 
+import interface_adapter.ViewManagerModel;
+import interface_adapter.messaging.MessagingController;
+import interface_adapter.messaging.MessagingViewModel;
 import interface_adapter.search.SearchListingsController;
 import interface_adapter.search.SearchListingsState;
 import interface_adapter.search.SearchListingsViewModel;
+import interface_adapter.view_listing.ViewListingController;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,13 +23,16 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
     private final SearchListingsViewModel viewModel;
     private SearchListingsController controller;
 
-    // --- Search Inputs ---
+    // Dependencies needed for ListingPreviewPanel
+    private MessagingController messagingController;
+    private MessagingViewModel messagingViewModel;
+    private ViewManagerModel viewManagerModel;
+    private ViewListingController viewListingController;
+
     private final JTextField keywordField = new JTextField(15);
     private final JComboBox<String> categoryBox;
     private final JButton searchButton = new JButton("Search");
     private final JButton backButton = new JButton("Back to Home");
-
-    // --- Results Area ---
     private final JPanel resultsPanel = new JPanel();
     private final JLabel messageLabel = new JLabel("");
 
@@ -33,12 +42,11 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
 
         setLayout(new BorderLayout());
 
-        // 1. TOP PANEL: Filters and Search Button
+        // --- Top Panel ---
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
         topPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
         categoryBox = new JComboBox<>();
-        // Populate category dropdown
         if (viewModel.getCategories() != null) {
             for (String cat : viewModel.getCategories()) {
                 categoryBox.addItem(cat);
@@ -50,49 +58,50 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         topPanel.add(new JLabel("Cat:"));
         topPanel.add(categoryBox);
         topPanel.add(searchButton);
-
         add(topPanel, BorderLayout.NORTH);
 
-        //Results Grid
-        resultsPanel.setLayout(new GridLayout(0, 4, 10, 10));
+        // --- Results Panel ---
+        // Using FlowLayout to match Homepage behavior
+        resultsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
         resultsPanel.setBackground(new Color(245, 245, 245));
 
-        JPanel gridWrapper = new JPanel(new BorderLayout());
-        gridWrapper.setBackground(new Color(245, 245, 245));
-        gridWrapper.add(resultsPanel, BorderLayout.NORTH);
-
-        JScrollPane scrollPane = new JScrollPane(gridWrapper);
+        JScrollPane scrollPane = new JScrollPane(resultsPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.getVerticalScrollBar().setUnitIncrement(16); // Smoother scrolling speed
+        scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
-        // Container for Message + ScrollPane
         JPanel centerContainer = new JPanel(new BorderLayout());
         messageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         messageLabel.setBorder(new EmptyBorder(5, 0, 5, 0));
-
         centerContainer.add(messageLabel, BorderLayout.NORTH);
         centerContainer.add(scrollPane, BorderLayout.CENTER);
-
         add(centerContainer, BorderLayout.CENTER);
 
-        // 3. BOTTOM PANEL: Navigation
+        // --- Bottom Panel ---
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         bottomPanel.add(backButton);
         add(bottomPanel, BorderLayout.SOUTH);
 
-        // --- Action Listeners ---
+        // --- Listeners ---
         searchButton.addActionListener(e -> {
             if (controller != null) {
-                String keyword = keywordField.getText();
-                String category = (String) categoryBox.getSelectedItem();
-                controller.execute(keyword, category);
+                controller.execute(keywordField.getText(), (String) categoryBox.getSelectedItem());
             }
         });
     }
 
     public void setSearchListingsController(SearchListingsController controller) {
         this.controller = controller;
+    }
+
+    public void setDependencies(MessagingController messagingController,
+                                MessagingViewModel messagingViewModel,
+                                ViewManagerModel viewManagerModel,
+                                ViewListingController viewListingController) {
+        this.messagingController = messagingController;
+        this.messagingViewModel = messagingViewModel;
+        this.viewManagerModel = viewManagerModel;
+        this.viewListingController = viewListingController;
     }
 
     public void addBackListener(ActionListener listener) {
@@ -102,94 +111,48 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         if ("state".equals(evt.getPropertyName())) {
-            SearchListingsState state = (SearchListingsState) evt.getNewValue();
-            updateView(state);
+            updateView((SearchListingsState) evt.getNewValue());
         }
     }
 
-    /**
-     * Rebuilds the grid of cards based on the new state.
-     */
     private void updateView(SearchListingsState state) {
-        resultsPanel.removeAll(); // Clear old cards
-
+        resultsPanel.removeAll();
         List<SearchListingsState.ListingViewModel> results = state.getResults();
 
         if (results.isEmpty()) {
-            if (state.getErrorMessage() != null && !state.getErrorMessage().isEmpty()) {
-                messageLabel.setText(state.getErrorMessage());
-                messageLabel.setForeground(Color.RED);
-            } else {
-                messageLabel.setText("No results found.");
-                messageLabel.setForeground(Color.BLACK);
-            }
+            String error = state.getErrorMessage();
+            messageLabel.setText((error != null && !error.isEmpty()) ? error : "No results found.");
+            messageLabel.setForeground((error != null && !error.isEmpty()) ? Color.RED : Color.BLACK);
         } else {
             String msg = state.isShowingFallbackResults()
-                    ? "No exact match. Showing results for: " + state.getCategoryName()
+                    ? "No exact match. Showing: " + state.getCategoryName()
                     : "Results found: " + results.size();
             messageLabel.setText(msg);
             messageLabel.setForeground(Color.BLACK);
 
-            // Create a card for each listing
-            for (SearchListingsState.ListingViewModel listing : results) {
-                resultsPanel.add(createListingCard(listing));
+            for (SearchListingsState.ListingViewModel item : results) {
+                JSONObject json = new JSONObject();
+                json.put("Name", item.getName());
+                json.put("Owner", item.getOwner());
+                json.put("Description", item.getDescription());
+
+                // Convert comma-separated string back to JSONArray for the panel
+                JSONArray catArray = new JSONArray();
+                String[] cats = item.getCategorySummary().split(", ");
+                for(String c : cats) catArray.put(c);
+                json.put("Categories", catArray);
+
+
+                resultsPanel.add(new ListingPreviewPanel(
+                        json,
+                        viewListingController,
+                        messagingController,
+                        messagingViewModel,
+                        viewManagerModel
+                ));
             }
         }
-
-        // Refresh UI to show new cards
         resultsPanel.revalidate();
         resultsPanel.repaint();
-    }
-
-    /**
-     * Creates a single visual card for a listing.
-     */
-    private JPanel createListingCard(SearchListingsState.ListingViewModel listing) {
-        JPanel card = new JPanel();
-        card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
-        card.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(Color.GRAY, 1),
-                BorderFactory.createEmptyBorder(10, 10, 10, 10)
-        ));
-        card.setBackground(Color.WHITE);
-
-        // Fixed height ensures the grid rows stay uniform
-        card.setPreferredSize(new Dimension(100, 200));
-
-        // -- 1. Title --
-        JLabel nameLabel = new JLabel(listing.getName());
-        nameLabel.setFont(new Font("SansSerif", Font.BOLD, 12));
-        nameLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-        // -- 2. Categories --
-        JLabel categoryLabel = new JLabel(listing.getCategorySummary());
-        categoryLabel.setFont(new Font("SansSerif", Font.ITALIC, 10));
-        categoryLabel.setForeground(Color.DARK_GRAY);
-        categoryLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-        // -- 3. Description --
-        JTextArea descArea = new JTextArea(listing.getDescription());
-        descArea.setFont(new Font("SansSerif", Font.PLAIN, 11));
-        descArea.setLineWrap(true);
-        descArea.setWrapStyleWord(true);
-        descArea.setEditable(false);
-        descArea.setFocusable(false);
-        descArea.setOpaque(false);
-
-        JScrollPane descScroll = new JScrollPane(descArea);
-        descScroll.setBorder(null);
-        descScroll.setAlignmentX(Component.LEFT_ALIGNMENT);
-        descScroll.getViewport().setOpaque(false);
-        descScroll.setOpaque(false);
-
-
-        // Assemble Card
-        card.add(nameLabel);
-        card.add(Box.createVerticalStrut(4));
-        card.add(categoryLabel);
-        card.add(Box.createVerticalStrut(8));
-        card.add(descScroll);
-
-        return card;
     }
 }

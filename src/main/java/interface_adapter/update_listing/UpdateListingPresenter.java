@@ -20,7 +20,7 @@ public class UpdateListingPresenter implements UpdateListingOutputBoundary {
     @Override
     public void prepareSuccessView(UpdateListingOutputData outputData) {
         // Update the profile state with the current user
-        ViewProfileState state = viewProfileViewModel.getState();
+        final ViewProfileState state = viewProfileViewModel.getState();
         state.setUsername(outputData.getUser().get_username());
 
         // Notify the profile view that its state changed
