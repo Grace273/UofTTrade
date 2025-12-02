@@ -1,11 +1,14 @@
 package view;
 
-import interface_adapter.messaging.MessagingViewModel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.net.URI;
 
+import interface_adapter.messaging.MessagingViewModel;
+
+/**
+ * A Subpage view for the Messaging use case.
+ */
 public class MessagingSubpageView extends JPanel {
 
     private final MessagingViewModel viewModel;
@@ -17,13 +20,14 @@ public class MessagingSubpageView extends JPanel {
     private final JButton backButton;
 
     /**
+     * Constructs a MessagingSubpageView.
      * @param viewModel MessagingViewModel
      * @param onBack    Return to former page when clicking the Back button.
      */
     public MessagingSubpageView(MessagingViewModel viewModel, Runnable onBack) {
         this.viewModel = viewModel;
 
-        //Initialize the board
+        // Initialize the board
         setLayout(new BorderLayout(10, 10));
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
@@ -74,9 +78,6 @@ public class MessagingSubpageView extends JPanel {
         refreshFromState();
     }
 
-    /**
-     * Read the data from the ViewModel.State and refresh the page
-     */
     private void refreshFromState() {
         MessagingViewModel.State s = viewModel.getState();
         if (s == null) return;
@@ -94,9 +95,6 @@ public class MessagingSubpageView extends JPanel {
         }
     }
 
-    /**
-     * Open the Gmail through the default server
-     */
     private void openGmail() {
         MessagingViewModel.State s = viewModel.getState();
         if (s == null || s.gmailUrl == null || s.gmailUrl.isBlank()) {

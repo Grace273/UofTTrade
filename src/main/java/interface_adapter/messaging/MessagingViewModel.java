@@ -2,8 +2,10 @@ package interface_adapter.messaging;
 
 import interface_adapter.ViewModel;
 
+/**
+ * The Viewmodel for the Messaging view.
+ */
 public class MessagingViewModel extends ViewModel<MessagingViewModel.State> {
-    // Distinguish as Messaging view model
     public static final String VIEW_NAME = "messaging";
 
     public static class State {
