@@ -33,6 +33,7 @@ public class MessagingPresenter implements MessagingOutputBoundary {
     @Override
     public void presentFailureView(String errorMessage) {
         MessagingViewModel.State state = viewModel.getState();
+        state.gmailUrl = null;
         state.error = errorMessage;
 
         viewModel.setState(state);
