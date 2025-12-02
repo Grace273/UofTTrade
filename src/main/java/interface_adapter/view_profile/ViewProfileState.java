@@ -20,7 +20,7 @@ public class ViewProfileState {
     private List<String> listingDescriptions = new ArrayList<>();
     private User user;
 
-    private String errorMessage = "Unable to load profile.";
+    private String errorMessage = "";
 
     // Message to display when there are zero listings
     private String noListingsMessage = "";

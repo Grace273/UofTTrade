@@ -161,7 +161,6 @@ public class AppBuilder {
         homepageView.addViewProfileListener(e -> {
             viewManagerModel.setState(viewProfileViewModel.getViewName());
             viewManagerModel.firePropertyChanged();
-            //profileView.loadProfile();
         });
 
         //temp create listings view
@@ -214,7 +213,7 @@ public class AppBuilder {
         };
 
         Consumer<String> deleteHandler = rawListingName -> {
-            // Sanitize the input name: remove brackets and trim whitespace
+
             String listingName = rawListingName.replaceAll("\\[|\\]", "").trim();
 
             User currentUser = viewProfileViewModel.getState().getUser();
@@ -241,7 +240,7 @@ public class AppBuilder {
             }
         };
 
-        // Initialize the ProfileView before adding it
+
         profileView = new ProfileView(
                 viewProfileViewModel,
                 controller,
@@ -250,17 +249,17 @@ public class AppBuilder {
                 deleteHandler
         );
 
-        // Add listener from homepageView
+
         homepageView.addViewProfileListener(e -> {
             viewManagerModel.setState(viewProfileViewModel.getViewName());
             viewManagerModel.firePropertyChanged();
-            //profileView.loadProfile();
+
         });
 
 
         contentPane.add(profileView, viewProfileViewModel.getViewName());
 
-        // Add a property change listener to update profileView when its view is active
+
         viewManagerModel.addPropertyChangeListener(evt -> {
             if (evt.getNewValue().equals(viewProfileViewModel.getViewName())) {
                 profileView.loadProfile();
@@ -278,7 +277,7 @@ public class AppBuilder {
         ViewProfileInputBoundary interactor =
                 new ViewProfileInteractor(userDataAccessObject, presenter);
 
-        // Pass homepageViewModel into the controller
+
         ViewProfileController controller =
                 new ViewProfileController(interactor);
 
