@@ -19,6 +19,12 @@ public interface MessagingUserDataAccessInterface {
      * @throws IOException if there is an error accessing the data source
      */
     String getValidEmailForUser(String userIdentifier) throws IOException;
+
+    /**
+     * Determines whether the email provided is considered as a plausible email.
+     * @param email the email waits for verification.
+     * @return true if the email appears to be valid, false otherwise.
+     */
     boolean isPlasuibleEmail(String email);
 
 }
