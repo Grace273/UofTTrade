@@ -6,6 +6,7 @@ public interface CreateListingOutputBoundary {
     /**
      * Prepares the success view for the Create Listing Use Case.
      * @param outputData the output data
+     * @throws IOException if an I/O error occurs while preparing the view
      */
     void prepareSuccessView(CreateListingOutputData outputData) throws IOException;
 

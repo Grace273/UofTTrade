@@ -1,4 +1,5 @@
 package interface_adapter.create_listing;
+
 import interface_adapter.ViewManagerModel;
 import interface_adapter.view_profile.ViewProfileState;
 import interface_adapter.view_profile.ViewProfileViewModel;
@@ -13,7 +14,8 @@ public class CreateListingPresenter implements CreateListingOutputBoundary {
     private final ViewProfileViewModel viewProfileViewModel;
     private final ViewManagerModel viewManagerModel;
 
-    public CreateListingPresenter(CreateListingViewModel createListingViewModel, ViewProfileViewModel viewProfileViewModel, ViewManagerModel viewManagerModel) {
+    public CreateListingPresenter(CreateListingViewModel createListingViewModel,
+                                  ViewProfileViewModel viewProfileViewModel, ViewManagerModel viewManagerModel) {
         this.createListingViewModel = createListingViewModel;
         this.viewProfileViewModel = viewProfileViewModel;
         this.viewManagerModel = viewManagerModel;
@@ -21,7 +23,7 @@ public class CreateListingPresenter implements CreateListingOutputBoundary {
 
     @Override
     public void prepareSuccessView(CreateListingOutputData response) {
-        CreateListingState createState = createListingViewModel.getState();
+        final CreateListingState createState = createListingViewModel.getState();
         createState.set_name_error(null);
         createState.set_successMessage("Listing published successfully!");
 
@@ -30,7 +32,7 @@ public class CreateListingPresenter implements CreateListingOutputBoundary {
 
         // On success, switch to the View Profile view.
         final ViewProfileState viewProfileState = viewProfileViewModel.getState();
-        viewProfileState.setUsername(response.get_owner().get_username());
+        viewProfileState.setUsername(response.getOwner().get_username());
         viewProfileViewModel.firePropertyChanged();
 
         viewManagerModel.setState(viewProfileViewModel.getViewName());

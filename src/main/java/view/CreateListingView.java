@@ -1,9 +1,6 @@
 package view;
 
-import data_access.CreateListingDAO;
-import data_access.UserDataAccessObject;
 import entity.Category;
-import entity.User;
 import interface_adapter.create_listing.CreateListingViewModel;
 import interface_adapter.create_listing.CreateListingState;
 import interface_adapter.create_listing.CreateListingController;
@@ -15,21 +12,16 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.imageio.ImageIO;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 import app.Main;
 
 /**
- * The View for when the user is creating a new listing
+ * The View for when the user is creating a new listing.
  */
 public class CreateListingView extends JPanel implements ActionListener, PropertyChangeListener {
     private final String viewName = "create listing";
@@ -59,15 +51,15 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
         createListingViewModel.addPropertyChangeListener(this);
 
         // ---------------------- MAIN COLUMN (centered) ----------------------
-        JPanel mainColumn = new JPanel();
+        final JPanel mainColumn = new JPanel();
         mainColumn.setLayout(new BoxLayout(mainColumn, BoxLayout.Y_AXIS));
         mainColumn.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainColumn.setBorder(BorderFactory.createEmptyBorder(0, 40, 20, 40)); // form padding
 
 
         // ======= SPACING UTILITIES =======
-        int vSpace = 14;
-        int hSpace = 10;
+        final int vSpace = 14;
+        final int vHeight = 5;
 
         // ---------------------- NAME FIELD ----------------------
         final LabelTextPanel listingNameInfo = new LabelTextPanel(
@@ -79,19 +71,18 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
         mainColumn.add(listingNameInfo);
 
         // --- DESCRIPTION FIELD ---
-        JLabel descLabel = new JLabel(CreateListingViewModel.DESCRIPTION_LABEL);
+        final JLabel descLabel = new JLabel(CreateListingViewModel.DESCRIPTION_LABEL);
         descLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         descriptionInputField.setLineWrap(true);
         descriptionInputField.setWrapStyleWord(true);
-        JScrollPane scrollPane = new JScrollPane(descriptionInputField);
+        final JScrollPane scrollPane = new JScrollPane(descriptionInputField);
         scrollPane.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         mainColumn.add(descLabel);
-        mainColumn.add(Box.createVerticalStrut(5));
+        mainColumn.add(Box.createVerticalStrut(vHeight));
         mainColumn.add(scrollPane);
         mainColumn.add(Box.createVerticalStrut(vSpace));
-
 
         // ---------------------- CATEGORIES ----------------------
         // label
@@ -99,16 +90,15 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
         listingCategoryWrapperPanel.setLayout(new BoxLayout(listingCategoryWrapperPanel, BoxLayout.X_AXIS));
         listingCategoryWrapperPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel categoriesLabel = new JLabel(CreateListingViewModel.CATEGORIES_LABEL);
+        final JLabel categoriesLabel = new JLabel(CreateListingViewModel.CATEGORIES_LABEL);
         listingCategoryWrapperPanel.add(categoriesLabel);
 
         listingCategoryWrapperPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 6, 0));
         listingCategoryWrapperPanel.setMaximumSize(listingCategoryWrapperPanel.getPreferredSize());
         mainColumn.add(listingCategoryWrapperPanel);
 
-
         // combobox sizes
-        Dimension comboSize = new Dimension(200, 28);
+        final Dimension comboSize = new Dimension(200, 28);
         listingCategory1ComboBox.setPreferredSize(comboSize);
         listingCategory1ComboBox.setMaximumSize(comboSize);
 
@@ -143,10 +133,10 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
         mainColumn.add(buttons);
 
         // ---------------------- LISTENERS ----------------------
-        publishListingButton.addActionListener(e -> {
-            String name = listingNameInputField.getText();
-            String description = descriptionInputField.getText();
-            List<Category> categories = new ArrayList<>();
+        publishListingButton.addActionListener(exception -> {
+            final String name = listingNameInputField.getText();
+            final String description = descriptionInputField.getText();
+            final List<Category> categories = new ArrayList<>();
             if (listingCategory1ComboBox.getSelectedIndex() > 0) {
                 categories.add(Main.categoriesArray.get(listingCategory1ComboBox.getSelectedIndex()));
             }
@@ -154,22 +144,23 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
                 categories.add(Main.categoriesArray.get(listingCategory2ComboBox.getSelectedIndex()));
             }
 
-            //If BOTH were left blank, "Select a Category" BECOMES the category
+            // If BOTH were left blank, "Select a Category" BECOMES the category
             if (categories.isEmpty()) {
                 categories.add(Main.categoriesArray.get(0));
             }
 
             try {
                 createListingController.execute(name, description, categories);
-            } catch (IOException ex) {
+            }
+            catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         });
 
         cancelButton.addActionListener(
                 new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        //reset listing inputs
+                    public void actionPerformed(ActionEvent exception) {
+                        // reset listing inputs
                         errorLabel.setText("");
                         errorMessage = "";
                         listingNameInputField.setText("");
@@ -183,13 +174,22 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
 
         descriptionInputField.getDocument().addDocumentListener(new DocumentListener() {
             private void update() {
-                CreateListingState currentState = createListingViewModel.getState();
+                final CreateListingState currentState = createListingViewModel.getState();
                 currentState.set_description(descriptionInputField.getText());
                 createListingViewModel.setState(currentState);
             }
-            public void insertUpdate(DocumentEvent e) { update(); }
-            public void removeUpdate(DocumentEvent e) { update(); }
-            public void changedUpdate(DocumentEvent e) { update(); }
+
+            public void insertUpdate(DocumentEvent exception) {
+                update();
+            }
+
+            public void removeUpdate(DocumentEvent exception) {
+                update();
+            }
+
+            public void changedUpdate(DocumentEvent exception) {
+                update();
+            }
         });
 
         listingNameInputField.getDocument().addDocumentListener(new DocumentListener() {
@@ -230,8 +230,8 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
     public void propertyChange(PropertyChangeEvent evt) {
         final CreateListingState state = (CreateListingState) evt.getNewValue();
         setFields(state);
-        String nameError = state.get_name_error();
-        String successMessage = state.get_successMessage();
+        final String nameError = state.get_name_error();
+        final String successMessage = state.get_successMessage();
 
         if (nameError != null && !nameError.isEmpty()) {
             errorMessage = nameError;
@@ -240,7 +240,7 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
             return;
         }
         if (successMessage != null && !successMessage.isEmpty()) {
-            errorLabel.setText("");  // clear any old error
+            errorLabel.setText("");
 
             JOptionPane.showMessageDialog(
                     this,
@@ -259,7 +259,9 @@ public class CreateListingView extends JPanel implements ActionListener, Propert
         nameErrorField.setText(state.get_name_error());
     }
 
-    public String getViewName() { return viewName; }
+    public String getViewName() {
+        return viewName;
+    }
 
     public void setCreateListingController(CreateListingController createListingController) {
         this.createListingController = createListingController;

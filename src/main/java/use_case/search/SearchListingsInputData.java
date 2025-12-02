@@ -8,23 +8,29 @@ public class SearchListingsInputData {
     private String categoryName;
 
     /**
-     * @param keyword      keyword
-     * @param categoryName selected category label that constrains or backs up the search
+     * Constructs a new {@code SearchListingsInputData} object containing the
+     * search criteria for listings.
+     * @param keyword      the keyword used to filter listing names or descriptions
+     * @param categoryName the selected category label used to further constrain the search
      */
     public SearchListingsInputData(String keyword, String categoryName) {
         this.keyword = keyword;
         this.categoryName = categoryName;
-
     }
+
     /**
-     * @return the raw keyword string (not normalized)
+     * Returns the raw keyword string provided by the user (not normalized).
+     *
+     * @return the raw keyword string
      */
     public String getKeyword() {
         return keyword;
-
     }
+
     /**
-     * @return the raw category string chosen by the user
+     * Returns the raw category name chosen by the user (not normalized).
+     *
+     * @return the raw category name string chosen by the user
      */
     public String getCategoryName() {
         return categoryName;
