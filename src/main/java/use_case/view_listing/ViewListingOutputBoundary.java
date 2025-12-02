@@ -13,4 +13,9 @@ public interface ViewListingOutputBoundary {
      */
     void switchToPreviousView();
 
+    /**
+     * Throws an exception after not receiving a listing.
+     */
+    void prepareFailView();
+
 }

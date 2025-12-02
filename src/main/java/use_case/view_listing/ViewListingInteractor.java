@@ -28,18 +28,22 @@ public class ViewListingInteractor implements ViewListingInputBoundary {
         final String listingName = viewListingInputData.getListingName();
         final String listingOwner = viewListingInputData.getListingOwner();
         final JSONObject listing = viewListingDataAccess.getSpecificListingInfo(listingName, listingOwner);
-        final User ownerUser = viewListingUserDataAccess.getUser(listingOwner);
-        final String ownerEmail = (ownerUser != null) ? ownerUser.get_email() : null;
-        final JSONArray listingCategoriesJSON = listing.getJSONArray("Categories");
-        final List<String> listingCategories = new ArrayList<>();
-        for (int i = 0; i < listingCategoriesJSON.length(); i++) {
-            listingCategories.add(listingCategoriesJSON.getString(i));
+        if (listing == null) {
+            viewListingOutputBoundary.prepareFailView();
         }
+        else {
+            final User ownerUser = viewListingUserDataAccess.getUser(listingOwner);
+            final String ownerEmail = (ownerUser != null) ? ownerUser.get_email() : null;
+            final JSONArray listingCategoriesJSON = listing.getJSONArray("Categories");
+            final List<String> listingCategories = new ArrayList<>();
+            for (int i = 0; i < listingCategoriesJSON.length(); i++) {
+                listingCategories.add(listingCategoriesJSON.getString(i));
+            }
 
-        final ViewListingOutputData viewListingOutputData = new ViewListingOutputData(listingName, listingOwner,
-                ownerEmail, listingCategories, (String) listing.get("Description"));
-        viewListingOutputBoundary.switchToListingView(viewListingOutputData);
-
+            final ViewListingOutputData viewListingOutputData = new ViewListingOutputData(listingName, listingOwner,
+                    ownerEmail, listingCategories, (String) listing.get("Description"));
+            viewListingOutputBoundary.switchToListingView(viewListingOutputData);
+        }
     }
 
     @Override

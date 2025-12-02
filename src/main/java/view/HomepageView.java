@@ -15,6 +15,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomepageView extends JPanel implements PropertyChangeListener {

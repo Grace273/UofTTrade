@@ -43,4 +43,15 @@ public class ViewListingPresenter implements ViewListingOutputBoundary {
         viewManagerModel.firePropertyChanged();
 
     }
+
+    @Override
+    public void prepareFailView() {
+        throw new ListingNotFoundException();
+    }
+
+    public static class ListingNotFoundException extends RuntimeException {
+        public ListingNotFoundException() {
+            super("The listing you are looking for does not exist.");
+        }
+    }
 }

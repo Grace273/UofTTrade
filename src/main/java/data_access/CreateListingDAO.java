@@ -78,7 +78,7 @@ public class CreateListingDAO implements CreateListingUserDataAccessInterface, V
                 return listingsObject.getJSONObject(key);
             }
         }
-        return new JSONObject();
+        return null;
     }
 
     /**
