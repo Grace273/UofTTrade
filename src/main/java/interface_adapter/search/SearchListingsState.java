@@ -106,6 +106,7 @@ public class SearchListingsState {
     public static class ListingViewModel {
         private final String name;
         private final String description;
+        private final String owner;
         private final String categorySummary;
 
         /**
@@ -113,9 +114,10 @@ public class SearchListingsState {
          * @param description      description of item
          * @param categorySummary  comma-separated category labels
          */
-        public ListingViewModel(String name, String description, String categorySummary) {
+        public ListingViewModel(String name, String description, String owner, String categorySummary) {
             this.name = name;
             this.description = description;
+            this.owner = owner;
             this.categorySummary = categorySummary;
         }
 
@@ -132,6 +134,8 @@ public class SearchListingsState {
         public String getCategorySummary() {
             return categorySummary;
         }
+
+        public String getOwner() { return owner; }
 
         public String getDescription() {
             return description;
