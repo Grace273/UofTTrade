@@ -55,8 +55,8 @@ public class MessagingInteractor implements MessagingInputBoundary {
             }
 
         }
-        catch (IOException ioException) {
-            presenter.presentFailureView("Failed to create Gmail link: " + ioException.getMessage());
+        catch (IOException | RuntimeException exception) {
+            presenter.presentFailureView("Failed to create Gmail link: " + exception.getMessage());
         }
     }
 
