@@ -111,7 +111,12 @@ public class CreateListingDAO implements CreateListingUserDataAccessInterface, V
         }
     }
 
-    public boolean existsById(String listingID) throws IOException {
+    /**
+     * Returns if listing with the give listingId exists
+     * @param listingID the id of the listing
+     */
+    @Override
+    public boolean existById(String listingID) throws IOException {
         JSONObject listingData = getListingData();
         if (listingData.keySet().contains(listingID)) {
             return true;

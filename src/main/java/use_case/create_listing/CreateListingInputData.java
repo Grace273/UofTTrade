@@ -1,5 +1,6 @@
 package use_case.create_listing;
 
+import data_access.UserDataAccessObject;
 import entity.Category;
 import entity.User;
 
@@ -15,7 +16,6 @@ public class CreateListingInputData {
     private String name;
     private String description;
     private List<Category> categories = new ArrayList<>();
-    private User owner;
     public CreateListingInputData(String name, String description, List<Category> categories){
         this.name = name;
         this.description = description;
@@ -32,7 +32,5 @@ public class CreateListingInputData {
 
     public String get_name() { return name; }
     public String get_description() { return description; }
-
-    public User get_owner() { return owner; }
 
 }

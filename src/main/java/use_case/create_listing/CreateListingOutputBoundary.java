@@ -1,11 +1,13 @@
 package use_case.create_listing;
 
+import java.io.IOException;
+
 public interface CreateListingOutputBoundary {
     /**
      * Prepares the success view for the Create Listing Use Case.
      * @param outputData the output data
      */
-    void prepareSuccessView(CreateListingOutputData outputData);
+    void prepareSuccessView(CreateListingOutputData outputData) throws IOException;
 
     /**
      * Prepares the failure view for the Create Listing Use Case.

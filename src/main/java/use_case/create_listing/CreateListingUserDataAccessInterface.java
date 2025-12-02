@@ -10,4 +10,10 @@ public interface CreateListingUserDataAccessInterface {
      * @param listing the listing to save
      */
     void save(Listing listing) throws IOException;
+
+    /**
+     * Returns if listing with the give listingId exists
+     * @param listingID the id of the listing
+     */
+    boolean existById(String listingID) throws IOException;
 }
