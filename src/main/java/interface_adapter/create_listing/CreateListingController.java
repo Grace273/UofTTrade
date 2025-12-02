@@ -16,11 +16,12 @@ public class CreateListingController {
         this.createListingInteractor = createListingInteractor;
     }
 
-
     /**
      * Executes the Create Listing Use Case.
      * @param name the name of the listing
      * @param categories the categories of the listing
+     * @param description ths description of the item
+     * @throws IOException if an I/O error occurs while creating or saving the listing
      */
     public void execute(String name, String description, List<Category> categories) throws IOException {
         final CreateListingInputData createListingInputData = new CreateListingInputData(name, description, categories);

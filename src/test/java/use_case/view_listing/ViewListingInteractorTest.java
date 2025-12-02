@@ -1,11 +1,9 @@
 package use_case.view_listing;
 
-import data_access.CreateListingDAO;
+import data_access.CreateListingDataAccessObject;
 import data_access.UserDataAccessObject;
 import entity.User;
-import interface_adapter.view_listing.ViewListingPresenter;
 import org.junit.jupiter.api.Test;
-import use_case.login.*;
 
 import java.io.IOException;
 
@@ -18,7 +16,7 @@ public class ViewListingInteractorTest {
     public void viewListingSuccessTest() throws IOException {
         ViewListingInputData inputData = new ViewListingInputData("Garbage Can", "TutorialBot77");
         UserDataAccessObject userRepository = new UserDataAccessObject();
-        CreateListingDAO createListingDAO = new CreateListingDAO();
+        CreateListingDataAccessObject createListingDAO = new CreateListingDataAccessObject();
         User user = userRepository.getUser("TutorialBot77");
 
         ViewListingOutputBoundary successPresenter = new ViewListingOutputBoundary() {
@@ -52,7 +50,7 @@ public class ViewListingInteractorTest {
     @Test
     public void viewListingFailListingDoesntExist() throws IOException {
         UserDataAccessObject userRepository = new UserDataAccessObject();
-        CreateListingDAO createListingDAO = new CreateListingDAO();
+        CreateListingDataAccessObject createListingDAO = new CreateListingDataAccessObject();
         ViewListingInputData inputData = new ViewListingInputData("Mouse and Keyboard", "TutorialBot77");
 
         ViewListingOutputBoundary successPresenter = new ViewListingOutputBoundary() {

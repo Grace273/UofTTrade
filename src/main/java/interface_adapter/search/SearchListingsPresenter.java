@@ -1,4 +1,5 @@
 package interface_adapter.search;
+
 import use_case.search.SearchListingsOutputBoundary;
 import use_case.search.SearchListingsOutputData;
 
@@ -24,7 +25,7 @@ public class SearchListingsPresenter implements SearchListingsOutputBoundary {
     }
 
     /**
-     * Updates the view state with the results
+     * Updates the view state with the results.
      *
      * @param outputData payload produced by the interactor
      */

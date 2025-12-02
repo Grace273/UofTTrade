@@ -115,7 +115,7 @@ public class UserDataAccessObject implements LoginUserDataAccessInterface, Regis
         List<Listing> result = new ArrayList<>();
 
         try {
-            CreateListingDAO listingDAO = new CreateListingDAO();
+            CreateListingDataAccessObject listingDAO = new CreateListingDataAccessObject();
             JSONObject data = listingDAO.getListingData();
 
             Iterator<String> keys = data.keys();

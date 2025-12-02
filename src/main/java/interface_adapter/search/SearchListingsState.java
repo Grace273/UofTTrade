@@ -1,4 +1,5 @@
 package interface_adapter.search;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,7 +17,7 @@ public class SearchListingsState {
     private boolean showingFallbackResults;
 
     /**
-     * @return the trimmed keyword currently displayed in the search field
+     * @return the trimmed keyword currently displayed in the search field.
      */
     public String getKeyword() {
         return keyword;

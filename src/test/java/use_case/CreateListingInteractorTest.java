@@ -1,6 +1,6 @@
 package use_case;
 
-import data_access.CreateListingDAO;
+import data_access.CreateListingDataAccessObject;
 import data_access.UpdateListingDataAccessObject;
 import data_access.UserDataAccessObject;
 import entity.Category;
@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CreateListingInteractorTest {
 
     @Test
-    void successTest() throws CreateListingDAO.DuplicateListingException, IOException {
+    void successTest() throws CreateListingDataAccessObject.DuplicateListingException, IOException {
         //log the user in
         UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
         LoginOutputBoundary loginPresenter = new LoginOutputBoundary() {
@@ -63,7 +63,7 @@ class CreateListingInteractorTest {
                 categories
         );
 
-        CreateListingUserDataAccessInterface listingDAO = new CreateListingDAO();
+        CreateListingUserDataAccessInterface listingDAO = new CreateListingDataAccessObject();
         var successPresenter = new CreateListingOutputBoundary() {
             int listingId;
 
@@ -73,7 +73,7 @@ class CreateListingInteractorTest {
                 assertEquals("item4", outputData.getName());
                 assertEquals("descriptionnn", outputData.getDescription());
                 assertEquals(categories, outputData.getCategories());
-                assertEquals(user.get_username().trim(), outputData.get_owner().get_username().trim());
+                assertEquals(user.get_username().trim(), outputData.getOwner().get_username().trim());
 
                 listingId = outputData.getListingID();
 
@@ -104,7 +104,7 @@ class CreateListingInteractorTest {
     }
 
     @Test
-     void failureListingExistsTest() throws CreateListingDAO.DuplicateListingException, IOException {
+     void failureListingExistsTest() throws CreateListingDataAccessObject.DuplicateListingException, IOException {
         //log the user in
         UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
         LoginOutputBoundary loginPresenter = new LoginOutputBoundary() {
@@ -141,7 +141,7 @@ class CreateListingInteractorTest {
                 categories
         );
 
-        CreateListingUserDataAccessInterface listingDAO = new CreateListingDAO();
+        CreateListingUserDataAccessInterface listingDAO = new CreateListingDataAccessObject();
         CreateListingOutputBoundary successPresenter = new CreateListingOutputBoundary() {
             @Override
             public void prepareSuccessView(CreateListingOutputData outputData) {
@@ -169,12 +169,12 @@ class CreateListingInteractorTest {
     }
 
     @Test
-     void nullListingNameTest() throws CreateListingDAO.DuplicateListingException, IOException {
+     void nullListingNameTest() throws CreateListingDataAccessObject.DuplicateListingException, IOException {
         //log the user in
         UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
         CreateListingInputData inputData = getCreateListingInputData(userDataAccessObject);
 
-        CreateListingUserDataAccessInterface listingDAO = new CreateListingDAO();
+        CreateListingUserDataAccessInterface listingDAO = new CreateListingDataAccessObject();
         CreateListingOutputBoundary successPresenter = new CreateListingOutputBoundary() {
             @Override
             public void prepareSuccessView(CreateListingOutputData outputData) {
