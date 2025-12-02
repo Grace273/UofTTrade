@@ -34,6 +34,7 @@ public class MessagingPresenter implements MessagingOutputBoundary {
     public void presentFailureView(String errorMessage) {
         MessagingViewModel.State state = viewModel.getState();
         state.gmailUrl = null;
+        state.title = "Unable to send email";
         state.error = errorMessage;
 
         viewModel.setState(state);
