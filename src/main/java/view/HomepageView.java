@@ -127,15 +127,6 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
             itemsPanel.add(createItemPanel(allListings.get(i), viewListingController, messagingController,
                     messagingViewModel, viewManagerModel));
         }
-        JSONObject obj = new JSONObject();
-        List<String> list = new ArrayList<String>();
-        list.add("Category 1");
-        list.add("Category 2");
-        obj.put("Owner", "abcdefghij");
-        obj.put("Name", "abcde");
-        obj.put("Categories", list);
-        itemsPanel.add(createItemPanel(obj, viewListingController, messagingController,
-                messagingViewModel, viewManagerModel));
         JScrollPane itemsScroll = new JScrollPane(homepageContentPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         add(itemsScroll, BorderLayout.CENTER);
 
