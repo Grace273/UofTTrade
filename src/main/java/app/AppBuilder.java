@@ -98,6 +98,7 @@ public class AppBuilder {
     private MessagingViewModel messagingViewModel;
     private MessagingController messagingController;
     private MessagingSubpageView messagingSubpageView;
+    private ViewListingController viewListingController;
 
     public AppBuilder() throws IOException {
         contentPane.setLayout(cardLayout);
@@ -344,6 +345,7 @@ public class AppBuilder {
 
         final ViewListingController controller = new ViewListingController(viewListingInteractor);
         viewListingView.setViewListingController(controller);
+        this.updateSearchDependencies(controller);
         return this;
 
     }
@@ -366,6 +368,7 @@ public class AppBuilder {
         if (viewListingView != null) {
             viewListingView.setMessagingDependencies(messagingController, messagingViewModel, viewManagerModel);
         }
+        this.updateSearchDependencies(null);
         return this;
     }
 
@@ -397,6 +400,19 @@ public class AppBuilder {
         this.updateListingController = new UpdateListingController(interactor);
 
         return this;
+    }
+    private void updateSearchDependencies(ViewListingController vlc) {
+        if (searchListingsView != null) {
+
+            ViewListingController vlcToUse = (vlc != null) ? vlc : this.viewListingController;
+
+            searchListingsView.setDependencies(
+                    messagingController,
+                    messagingViewModel,
+                    viewManagerModel,
+                    vlcToUse
+            );
+        }
     }
 
     public JFrame build() {
