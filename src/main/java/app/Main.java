@@ -8,11 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * WARNING FOR RUNNING TEST FILES: Because of the API rate limit, you should only run one test at a time (comment the
- * other ones out) or else only the first test will succeed and the rest will fail with
- * "A JSONObject text must begin with '{' at 1 [character 2 line 1]"
- */
 public class Main {
     public static List<Category> categoriesArray = new ArrayList<Category>();
     public static String[] categoriesNameArray = new String[9];

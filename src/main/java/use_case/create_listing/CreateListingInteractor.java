@@ -58,7 +58,7 @@ public class CreateListingInteractor implements CreateListingInputBoundary{
                 createListingDataAccessObject.save(listing);
                 createListingPresenter.prepareSuccessView(createListingOutputData);
             }
-            catch (CreateListingDAO.DuplicateListingException e) {
+            catch (CreateListingUserDataAccessInterface.DuplicateListingException e) {
                 createListingPresenter.prepareFailView("You already have a listing with this name");
             }
         }

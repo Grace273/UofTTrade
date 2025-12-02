@@ -20,7 +20,7 @@ public class CreateListingDAO implements CreateListingUserDataAccessInterface, V
      * @param listing the listing to save
      */
     @Override
-    public void save(Listing listing) throws IOException {
+    public void save(Listing listing) throws IOException, CreateListingUserDataAccessInterface.DuplicateListingException {
         String listingID = String.valueOf(listing.get_listingId());
 
         // 1. Get existing JSON object from Pantry
@@ -28,7 +28,7 @@ public class CreateListingDAO implements CreateListingUserDataAccessInterface, V
 
         // 2. Check duplicate
         if (listings.has(listingID)) {
-            throw new DuplicateListingException(listingID);
+            throw new CreateListingUserDataAccessInterface.DuplicateListingException(listingID);
         }
 
         // 3. Build categories as names
@@ -122,11 +122,5 @@ public class CreateListingDAO implements CreateListingUserDataAccessInterface, V
             return true;
         }
         return false;
-    }
-
-    public class DuplicateListingException extends RuntimeException {
-        public DuplicateListingException(String listingId) {
-            super("Listing already exists: " + listingId);
-        }
     }
 }

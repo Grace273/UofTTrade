@@ -9,11 +9,18 @@ public interface CreateListingUserDataAccessInterface {
      * Saves the listing.
      * @param listing the listing to save
      */
-    void save(Listing listing) throws IOException;
+    void save(Listing listing) throws IOException, DuplicateListingException;
 
     /**
      * Returns if listing with the give listingId exists
      * @param listingID the id of the listing
      */
     boolean existById(String listingID) throws IOException;
+
+    /**
+     * DuplicateListingException
+     */
+    class DuplicateListingException extends Exception {
+        public DuplicateListingException(String listingId) { super("Listing already exists: " + listingId); }
+    }
 }
