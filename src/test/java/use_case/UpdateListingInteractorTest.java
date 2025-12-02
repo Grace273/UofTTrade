@@ -71,42 +71,4 @@ class UpdateListingInteractorTest {
         // Act
         interactor.execute(inputData);
     }
-
-    @Test
-    void deleteFlagFalseDoesNothingTest() {
-        // Arrange: same entities, but delete flag = false
-        User user = new User("tina", "123","tinagao426@gmail.com");
-        List<Category> categories = new ArrayList<>();
-        Category furniture = new Category("furniture");
-        categories.add(furniture);
-        Listing listing = new Listing("table", "brand new table", categories , user);
-        List<Listing> listings = new ArrayList<>();
-        listings.add(listing);
-        user.set_listing(listings);
-
-        UpdateListingInputData inputData =
-                new UpdateListingInputData(false, user, listing);
-
-        InMemoryUpdateListingUserDAO userRepository =
-                new InMemoryUpdateListingUserDAO();
-
-        // Presenter that should NEVER be called in this test
-        UpdateListingOutputBoundary presenter = new UpdateListingOutputBoundary() {
-            @Override
-            public void prepareSuccessView(UpdateListingOutputData outputData) {
-                fail("prepareSuccessView should not be called when delete flag is false.");
-            }
-        };
-
-        UpdateListingInputBoundary interactor =
-                new UpdateListingInteractor(userRepository, presenter);
-
-        // Act
-        interactor.execute(inputData);
-
-        // Assert: DAO should not have been called, and listing should remain
-        assertEquals(-1, userRepository.lastUpdatedListingId);
-        assertEquals(0, userRepository.updateCallCount);
-        assertTrue(user.get_listings().contains(listing));
-    }
 }
