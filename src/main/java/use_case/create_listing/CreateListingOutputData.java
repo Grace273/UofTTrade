@@ -25,6 +25,7 @@ public class CreateListingOutputData {
         this.description = description;
         this.categories = categories;
         this.owner = owner;
+        this.listingID = generateListingId();
     }
 
     //overloaded
