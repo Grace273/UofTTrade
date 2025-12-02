@@ -5,6 +5,9 @@ import data_access.UserDataAccessObject;
 import data_access.CreateListingDAO;
 import entity.Listing;
 import entity.User;
+import entity.MessagingFactory;
+import entity.GmailMessagingFactory;
+
 import interface_adapter.ViewManagerModel;
 import interface_adapter.create_listing.CreateListingController;
 import interface_adapter.create_listing.CreateListingPresenter;
@@ -349,22 +352,33 @@ public class AppBuilder {
     }
 
     public AppBuilder addMessagingUseCase() throws IOException {
-        // viewmodel
+        // ViewModel
         messagingViewModel = new MessagingViewModel();
-        // presenter
-        MessagingOutputBoundary messagingPresenter = new MessagingPresenter(messagingViewModel);
-        //Interactor
-        MessagingInputBoundary messagingInteractor = new MessagingInteractor(userDataAccessObject, messagingPresenter);
-        //Controller
+
+        // Presenter
+        MessagingOutputBoundary messagingPresenter =
+                new MessagingPresenter(messagingViewModel);
+
+        MessagingFactory messagingFactory = new GmailMessagingFactory();
+
+        // Interactor
+        MessagingInputBoundary messagingInteractor =
+                new MessagingInteractor(userDataAccessObject, messagingPresenter, messagingFactory);
+
+        // Controller
         this.messagingController = new MessagingController(messagingInteractor);
 
-        if(homepageView != null) {
-            homepageView.setMessagingDependencies(messagingController, messagingViewModel, viewManagerModel);
+        // 把 controller + viewModel 注入到 homepage & viewListing
+        if (homepageView != null) {
+            homepageView.setMessagingDependencies(
+                    messagingController, messagingViewModel, viewManagerModel);
+
             final List<JSONObject> allListings = userDataAccessObject.getAllListings();
             homepageView.getListingPanels(allListings);
         }
         if (viewListingView != null) {
-            viewListingView.setMessagingDependencies(messagingController, messagingViewModel, viewManagerModel);
+            viewListingView.setMessagingDependencies(
+                    messagingController, messagingViewModel, viewManagerModel);
         }
         return this;
     }
