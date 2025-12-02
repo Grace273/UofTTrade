@@ -5,6 +5,7 @@ import data_access.UpdateListingDataAccessObject;
 import data_access.UserDataAccessObject;
 import entity.Category;
 import entity.User;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import use_case.create_listing.*;
 import use_case.login.*;
@@ -14,21 +15,33 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CreateListingInteractorTest {
+/**
+ * 3 tests for the CreateListing usecase.
+ * WARNING: Because of the API rate limit, you need to only run one test at a time (comment the other ones out)
+ * or else only the first test will succeed and the rest will fail with
+ * "A JSONObject text must begin with '{' at 1 [character 2 line 1]"
+ */
+class CreateListingInteractorTest {
 
     @Test
-    public void successTest() throws CreateListingDAO.DuplicateListingException, IOException {
+    void successTest() throws CreateListingDAO.DuplicateListingException, IOException {
         //log the user in
-        LoginUserDataAccessInterface userDataAccessObject = new UserDataAccessObject();
+        UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
         LoginOutputBoundary loginPresenter = new LoginOutputBoundary() {
             @Override
-            public void prepareSuccessView(LoginOutputData loginOutputData) {}
+            public void prepareSuccessView(LoginOutputData loginOutputData) {
+                //this is expected
+            }
 
             @Override
-            public void prepareFailView(String failMessage) {}
+            public void prepareFailView(String failMessage) {
+                //this is expected
+            }
 
             @Override
-            public void switchToRegisterView() {}
+            public void switchToRegisterView() {
+                //this is expected
+            }
         };
 
         LoginInputData loginInputData = new LoginInputData("grace123", "gracepw");
@@ -71,7 +84,9 @@ public class CreateListingInteractorTest {
             public void prepareFailView(String errorMessage) { fail(errorMessage); }
 
             @Override
-            public void switchToProfileView() {}
+            public void switchToProfileView() {
+                //this is expected
+            }
 
         };
 
@@ -79,7 +94,7 @@ public class CreateListingInteractorTest {
         CreateListingInputBoundary interactor = new CreateListingInteractor(
                 listingDAO,
                 successPresenter,
-                (UserDataAccessObject)userDataAccessObject
+                userDataAccessObject
         );
         interactor.execute(inputData);
 
@@ -89,18 +104,24 @@ public class CreateListingInteractorTest {
     }
 
     @Test
-    public void failureListingExistsTest() throws CreateListingDAO.DuplicateListingException, IOException {
+     void failureListingExistsTest() throws CreateListingDAO.DuplicateListingException, IOException {
         //log the user in
-        LoginUserDataAccessInterface userDataAccessObject = new UserDataAccessObject();
+        UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
         LoginOutputBoundary loginPresenter = new LoginOutputBoundary() {
             @Override
-            public void prepareSuccessView(LoginOutputData loginOutputData) {}
+            public void prepareSuccessView(LoginOutputData loginOutputData) {
+                //this is expected
+            }
 
             @Override
-            public void prepareFailView(String failMessage) {}
+            public void prepareFailView(String failMessage) {
+                //this is expected
+            }
 
             @Override
-            public void switchToRegisterView() {}
+            public void switchToRegisterView() {
+                //this is expected
+            }
         };
 
         LoginInputData loginInputData = new LoginInputData("grace123", "gracepw");
@@ -108,8 +129,6 @@ public class CreateListingInteractorTest {
         loginInteractor.execute(loginInputData);
 
         //create input data
-        User user = new User("grace123", "gracepw", "grace@gmail.com");
-
         Category category1 = new Category("Clothing");
         Category category2 = new Category("Select a Category");
         List<Category> categories = new ArrayList<>();
@@ -125,7 +144,7 @@ public class CreateListingInteractorTest {
         CreateListingUserDataAccessInterface listingDAO = new CreateListingDAO();
         CreateListingOutputBoundary successPresenter = new CreateListingOutputBoundary() {
             @Override
-            public void prepareSuccessView(CreateListingOutputData outputData) throws IOException {
+            public void prepareSuccessView(CreateListingOutputData outputData) {
                 fail("Use case success is unexpected.");
             }
 
@@ -135,56 +154,30 @@ public class CreateListingInteractorTest {
             }
 
             @Override
-            public void switchToProfileView() {}
+            public void switchToProfileView() {
+                //this is expected
+            }
         };
 
         //execute
         CreateListingInputBoundary interactor = new CreateListingInteractor(
                 listingDAO,
                 successPresenter,
-                (UserDataAccessObject)userDataAccessObject
+                userDataAccessObject
         );
         interactor.execute(inputData);
     }
 
     @Test
-    public void nullListingNameTest() throws CreateListingDAO.DuplicateListingException, IOException {
+     void nullListingNameTest() throws CreateListingDAO.DuplicateListingException, IOException {
         //log the user in
-        LoginUserDataAccessInterface userDataAccessObject = new UserDataAccessObject();
-        LoginOutputBoundary loginPresenter = new LoginOutputBoundary() {
-            @Override
-            public void prepareSuccessView(LoginOutputData loginOutputData) {}
-
-            @Override
-            public void prepareFailView(String failMessage) {}
-
-            @Override
-            public void switchToRegisterView() {}
-        };
-
-        LoginInputData loginInputData = new LoginInputData("grace123", "gracepw");
-        LoginInputBoundary loginInteractor = new LoginInteractor(userDataAccessObject, loginPresenter);
-        loginInteractor.execute(loginInputData);
-
-        //create input data
-        User user = new User("grace123", "gracepw", "grace@gmail.com");
-
-        Category category1 = new Category("Clothing");
-        Category category2 = new Category("Select a Category");
-        List<Category> categories = new ArrayList<>();
-        categories.add(category1);
-        categories.add(category2);
-
-        CreateListingInputData inputData = new CreateListingInputData(
-                null,
-                "Size medium",
-                categories
-        );
+        UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
+        CreateListingInputData inputData = getCreateListingInputData(userDataAccessObject);
 
         CreateListingUserDataAccessInterface listingDAO = new CreateListingDAO();
         CreateListingOutputBoundary successPresenter = new CreateListingOutputBoundary() {
             @Override
-            public void prepareSuccessView(CreateListingOutputData outputData) throws IOException {
+            public void prepareSuccessView(CreateListingOutputData outputData) {
                 fail("Use case success is unexpected.");
             }
 
@@ -194,15 +187,55 @@ public class CreateListingInteractorTest {
             }
 
             @Override
-            public void switchToProfileView() {}
+            public void switchToProfileView() {
+                //this is expected
+            }
         };
 
         //execute
         CreateListingInputBoundary interactor = new CreateListingInteractor(
                 listingDAO,
                 successPresenter,
-                (UserDataAccessObject)userDataAccessObject
+                userDataAccessObject
         );
         interactor.execute(inputData);
+    }
+
+    @NotNull
+    private CreateListingInputData getCreateListingInputData(
+            LoginUserDataAccessInterface userDataAccessObject) throws IOException {
+        LoginOutputBoundary loginPresenter = new LoginOutputBoundary() {
+            @Override
+            public void prepareSuccessView(LoginOutputData loginOutputData) {
+                //this is expected
+            }
+
+            @Override
+            public void prepareFailView(String failMessage) {
+                //this is expected
+            }
+
+            @Override
+            public void switchToRegisterView() {
+                //this is expected
+            }
+        };
+
+        LoginInputData loginInputData = new LoginInputData("grace123", "gracepw");
+        LoginInputBoundary loginInteractor = new LoginInteractor(userDataAccessObject, loginPresenter);
+        loginInteractor.execute(loginInputData);
+
+        //create input data
+        Category category1 = new Category("Clothing");
+        Category category2 = new Category("Select a Category");
+        List<Category> categories = new ArrayList<>();
+        categories.add(category1);
+        categories.add(category2);
+
+        return new CreateListingInputData(
+                null,
+                "Size medium",
+                categories
+        );
     }
 }
