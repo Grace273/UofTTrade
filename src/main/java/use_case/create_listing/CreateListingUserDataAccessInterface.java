@@ -10,7 +10,7 @@ public interface CreateListingUserDataAccessInterface {
      * @param listing the listing to save
      * @throws IOException if an I/O error occurs while saving the listing
      */
-    void save(Listing listing) throws IOException;
+    void save(Listing listing) throws IOException, DuplicateListingException;
 
     /**
      * Returns whether a listing with the given ID exists in persistent storage.
@@ -20,4 +20,11 @@ public interface CreateListingUserDataAccessInterface {
      * @throws IOException if an I/O error occurs while accessing the listing data
      */
     boolean existById(String listingID) throws IOException;
+
+    /**
+     * DuplicateListingException
+     */
+    class DuplicateListingException extends Exception {
+        public DuplicateListingException(String listingId) { super("Listing already exists: " + listingId); }
+    }
 }

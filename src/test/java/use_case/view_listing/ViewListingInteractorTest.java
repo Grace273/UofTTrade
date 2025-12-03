@@ -1,9 +1,9 @@
 package use_case.view_listing;
 
-import data_access.CreateListingDAO;
 import data_access.UserDataAccessObject;
 import entity.User;
 
+import data_access.CreateListingDataAccessObject;
 import interface_adapter.view_listing.ViewListingController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +26,7 @@ public class ViewListingInteractorTest {
     public void viewListingSuccessTest() throws IOException {
         ViewListingInputData inputData = new ViewListingInputData("Garbage Can", "TutorialBot77");
         UserDataAccessObject userRepository = new UserDataAccessObject();
-        CreateListingDAO createListingDAO = new CreateListingDAO();
+        CreateListingDataAccessObject CreateListingDataAccessObject = new CreateListingDataAccessObject();
         User user = userRepository.getUser("TutorialBot77");
 
         ViewListingOutputBoundary successPresenter = new ViewListingOutputBoundary() {
@@ -50,7 +50,7 @@ public class ViewListingInteractorTest {
             }
         };
 
-        ViewListingInputBoundary interactor = new ViewListingInteractor(createListingDAO, userRepository,
+        ViewListingInputBoundary interactor = new ViewListingInteractor(CreateListingDataAccessObject, userRepository,
                 successPresenter);
         interactor.execute(inputData);
 
@@ -60,7 +60,7 @@ public class ViewListingInteractorTest {
     @Test
     public void viewListingFailListingDoesntExist() throws IOException {
         UserDataAccessObject userRepository = new UserDataAccessObject();
-        CreateListingDAO createListingDAO = new CreateListingDAO();
+        CreateListingDataAccessObject CreateListingDataAccessObject = new CreateListingDataAccessObject();
         ViewListingInputData inputData = new ViewListingInputData("Mouse and Keyboard", "TutorialBot77");
 
         ViewListingOutputBoundary successPresenter = new ViewListingOutputBoundary() {
@@ -81,7 +81,7 @@ public class ViewListingInteractorTest {
             }
         };
 
-        ViewListingInputBoundary interactor = new ViewListingInteractor(createListingDAO, userRepository,
+        ViewListingInputBoundary interactor = new ViewListingInteractor(CreateListingDataAccessObject, userRepository,
                 successPresenter);
         interactor.execute(inputData);
 
@@ -91,7 +91,7 @@ public class ViewListingInteractorTest {
     public void testSwitchToPreviousView() throws IOException {
         ViewListingInputData inputData = new ViewListingInputData("Garbage Can", "TutorialBot77");
         UserDataAccessObject userRepository = new UserDataAccessObject();
-        CreateListingDAO createListingDAO = new CreateListingDAO();
+        CreateListingDataAccessObject CreateListingDataAccessObject = new CreateListingDataAccessObject();
         User user = userRepository.getUser("TutorialBot77");
 
         ViewListingOutputBoundary successPresenter = new ViewListingOutputBoundary() {
@@ -113,7 +113,7 @@ public class ViewListingInteractorTest {
             }
         };
 
-        ViewListingInputBoundary interactor = new ViewListingInteractor(createListingDAO, userRepository,
+        ViewListingInputBoundary interactor = new ViewListingInteractor(CreateListingDataAccessObject, userRepository,
                 successPresenter);
         interactor.execute(inputData);
         ViewListingController viewListingController = new ViewListingController(interactor);

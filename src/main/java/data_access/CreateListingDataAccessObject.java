@@ -25,7 +25,7 @@ public class CreateListingDataAccessObject implements CreateListingUserDataAcces
      * @param listing the listing to save
      */
     @Override
-    public void save(Listing listing) throws IOException {
+    public void save(Listing listing) throws IOException, CreateListingUserDataAccessInterface.DuplicateListingException {
         final String listingID = String.valueOf(listing.get_listingId());
 
         // 1. Get existing JSON object from Pantry
@@ -33,7 +33,7 @@ public class CreateListingDataAccessObject implements CreateListingUserDataAcces
 
         // 2. Check duplicate
         if (listings.has(listingID)) {
-            throw new DuplicateListingException(listingID);
+            throw new CreateListingUserDataAccessInterface.DuplicateListingException(listingID);
         }
 
         // 3. Build categories as names
@@ -144,11 +144,5 @@ public class CreateListingDataAccessObject implements CreateListingUserDataAcces
             return true;
         }
         return false;
-    }
-
-    public class DuplicateListingException extends RuntimeException {
-        public DuplicateListingException(String listingId) {
-            super("Listing already exists: " + listingId);
-        }
     }
 }

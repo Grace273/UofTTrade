@@ -1,8 +1,6 @@
 package use_case.create_listing;
 
 import java.io.IOException;
-
-import data_access.CreateListingDataAccessObject;
 import entity.Listing;
 import entity.User;
 import use_case.view_profile.ViewProfileUserDataAccessInterface;
@@ -59,7 +57,7 @@ public class CreateListingInteractor implements CreateListingInputBoundary {
                 createListingDataAccessObject.save(listing);
                 createListingPresenter.prepareSuccessView(createListingOutputData);
             }
-            catch (CreateListingDataAccessObject.DuplicateListingException exception) {
+            catch (CreateListingUserDataAccessInterface.DuplicateListingException e) {
                 createListingPresenter.prepareFailView("You already have a listing with this name");
             }
         }
