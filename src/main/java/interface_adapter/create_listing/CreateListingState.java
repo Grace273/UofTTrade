@@ -21,23 +21,111 @@ public class CreateListingState {
     private List<Category> categories;
     private String successMessage;
 
-    public String get_name() { return name; }
-    public User get_owner() { return owner; }
-    public List<Category> get_categories() { return categories; }
+    /**
+     * Returns the name of this listing.
+     *
+     * @return the listing name
+     */
+    public String get_name() {
+        return name;
+    }
 
-    public void set_name(String name) { this.name = name; }
-    public void set_owner(User owner) { this.owner = owner; }
-    public void set_categories(List<Category> categories) { this.categories = categories; }
+    /**
+     * Returns the owner of this listing.
+     *
+     * @return the user who owns this listing
+     */
+    public User get_owner() {
+        return owner;
+    }
 
+    /**
+     * Returns the list of categories associated with this listing.
+     *
+     * @return the categories for this listing
+     */
+    public List<Category> get_categories() {
+        return categories;
+    }
 
-    public void set_name_error(String nameError) { this.nameError = nameError; }
-    public void set_successMessage(String successMessage) {this.successMessage = successMessage; }
+    /**
+     * Sets the name of this listing.
+     *
+     * @param name the new name for the listing
+     */
+    public void set_name(String name) {
+        this.name = name;
+    }
 
-    public String get_name_error() { return nameError; }
-    public String get_successMessage() { return successMessage; }
+    /**
+     * Sets the owner of this listing.
+     *
+     * @param owner the new owner of the listing
+     */
+    public void set_owner(User owner) {
+        this.owner = owner;
+    }
 
+    /**
+     * Sets the list of categories associated with this listing.
+     *
+     * @param categories the new categories for this listing
+     */
+    public void set_categories(List<Category> categories) {
+        this.categories = categories;
+    }
+
+    /**
+     * Sets the error message associated with the listing name.
+     *
+     * @param nameError the error message for the name field
+     */
+    public void set_name_error(String nameError) {
+        this.nameError = nameError;
+    }
+
+    /**
+     * Sets the success message for the current operation.
+     *
+     * @param successMessage the success message to display
+     */
+    public void set_successMessage(String successMessage) {
+        this.successMessage = successMessage;
+    }
+
+    /**
+     * Returns the error message associated with the listing name.
+     *
+     * @return the name error message, or {@code null} if none is set
+     */
+    public String get_name_error() {
+        return nameError;
+    }
+
+    /**
+     * Returns the success message for the current operation.
+     *
+     * @return the success message, or {@code null} if none is set
+     */
+    public String get_successMessage() {
+        return successMessage;
+    }
+
+    /**
+     * Sets the description of the listing.
+     *
+     * @param description the description to set for the listing
+     */
     public void set_description(String description) {
         this.description = description;
     }
-    public String get_description() { return description; }
+
+    /**
+     * Returns the description of the listing.
+     *
+     * @return the listing description
+     */
+    public String get_description() {
+        return description;
+    }
 }

@@ -16,7 +16,7 @@ public class SearchListingsViewModel extends ViewModel<SearchListingsState> {
     private List<String> categories = new ArrayList<>();
 
     /**
-     * Creates the view-model
+     * Creates the view-model.
      * @param categories category names the combo-box should expose
      */
     public SearchListingsViewModel(List<String> categories) {

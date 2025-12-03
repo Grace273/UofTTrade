@@ -2,7 +2,7 @@ package app;
 
 import data_access.UpdateListingDataAccessObject;
 import data_access.UserDataAccessObject;
-import data_access.CreateListingDAO;
+import data_access.CreateListingDataAccessObject;
 import entity.Listing;
 import entity.User;
 import entity.MessagingFactory;
@@ -48,7 +48,6 @@ import interface_adapter.view_profile.ViewProfilePresenter;
 import use_case.view_profile.ViewProfileInputBoundary;
 import use_case.view_profile.ViewProfileOutputBoundary;
 import use_case.view_profile.ViewProfileInteractor;
-import use_case.search.SearchListingsInteractor;
 import interface_adapter.update_listing.UpdateListingController;
 import interface_adapter.messaging.MessagingViewModel;
 import interface_adapter.messaging.MessagingPresenter;
@@ -75,7 +74,7 @@ public class AppBuilder {
     ViewManager viewManager = new ViewManager(contentPane, cardLayout, viewManagerModel);
 
     final UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
-    final CreateListingDAO createListingDAO = new CreateListingDAO();
+    final CreateListingDataAccessObject createListingDAO = new CreateListingDataAccessObject();
 
     private RegisterView registerView;
     private RegisterViewModel registerViewModel;
@@ -444,6 +443,10 @@ public class AppBuilder {
 
         viewManagerModel.setState(registerView.getViewName());
         viewManagerModel.firePropertyChanged();
+
+        if (searchListingsView != null) {
+            searchListingsView.loadAllListings();
+        }
 
         return application;
 

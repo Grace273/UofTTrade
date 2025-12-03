@@ -7,6 +7,7 @@ import interface_adapter.search.SearchListingsController;
 import interface_adapter.search.SearchListingsState;
 import interface_adapter.search.SearchListingsViewModel;
 import interface_adapter.view_listing.ViewListingController;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -43,7 +44,7 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         setLayout(new BorderLayout());
 
         // --- Top Panel ---
-        JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        final JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
         topPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
         categoryBox = new JComboBox<>();
@@ -65,12 +66,12 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         resultsPanel.setLayout(new GridLayout(0, 4, 10, 10));
         resultsPanel.setBackground(new Color(245, 245, 245));
 
-        JScrollPane scrollPane = new JScrollPane(resultsPanel);
+        final JScrollPane scrollPane = new JScrollPane(resultsPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
-        JPanel centerContainer = new JPanel(new BorderLayout());
+        final JPanel centerContainer = new JPanel(new BorderLayout());
         messageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         messageLabel.setBorder(new EmptyBorder(5, 0, 5, 0));
         centerContainer.add(messageLabel, BorderLayout.NORTH);
@@ -78,12 +79,12 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         add(centerContainer, BorderLayout.CENTER);
 
         // --- Bottom Panel ---
-        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        final JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         bottomPanel.add(backButton);
         add(bottomPanel, BorderLayout.SOUTH);
 
         // --- Listeners ---
-        searchButton.addActionListener(e -> {
+        searchButton.addActionListener(exception -> {
             if (controller != null) {
                 controller.execute(keywordField.getText(), (String) categoryBox.getSelectedItem());
             }
@@ -94,6 +95,15 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         this.controller = controller;
     }
 
+    /**
+     * Injects the dependencies required for this controller to handle messaging
+     * and view transitions.
+     *
+     * @param messagingController  the controller responsible for messaging actions
+     * @param messagingViewModel   the view model holding messaging state
+     * @param viewManagerModel     the model that manages the active view
+     * @param viewListingController the controller used to display listing details
+     */
     public void setDependencies(MessagingController messagingController,
                                 MessagingViewModel messagingViewModel,
                                 ViewManagerModel viewManagerModel,
@@ -104,6 +114,11 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         this.viewListingController = viewListingController;
     }
 
+    /**
+     * Adds the given listener to be notified when the back button is pressed.
+     *
+     * @param listener the action listener to attach to the back button
+     */
     public void addBackListener(ActionListener listener) {
         backButton.addActionListener(listener);
     }
@@ -115,33 +130,46 @@ public class SearchListingsView extends JPanel implements PropertyChangeListener
         }
     }
 
+    /**
+     * Triggers a search for all listings (empty keyword, default category).
+     * Call this after the view is fully initialized.
+     */
+    public void loadAllListings() {
+        if (controller != null) {
+            // "Select a Category" is your default "All Categories" option
+            controller.execute("", "Select a Category");
+        }
+    }
+
     private void updateView(SearchListingsState state) {
         resultsPanel.removeAll();
-        List<SearchListingsState.ListingViewModel> results = state.getResults();
+        final List<SearchListingsState.ListingViewModel> results = state.getResults();
 
         if (results.isEmpty()) {
-            String error = state.getErrorMessage();
+            final String error = state.getErrorMessage();
             messageLabel.setText((error != null && !error.isEmpty()) ? error : "No results found.");
             messageLabel.setForeground((error != null && !error.isEmpty()) ? Color.RED : Color.BLACK);
-        } else {
-            String msg = state.isShowingFallbackResults()
+        }
+        else {
+            final String msg = state.isShowingFallbackResults()
                     ? "No exact match. Showing: " + state.getCategoryName()
                     : "Results found: " + results.size();
             messageLabel.setText(msg);
             messageLabel.setForeground(Color.BLACK);
 
             for (SearchListingsState.ListingViewModel item : results) {
-                JSONObject json = new JSONObject();
+                final JSONObject json = new JSONObject();
                 json.put("Name", item.getName());
                 json.put("Owner", item.getOwner());
                 json.put("Description", item.getDescription());
 
                 // Convert comma-separated string back to JSONArray for the panel
-                JSONArray catArray = new JSONArray();
-                String[] cats = item.getCategorySummary().split(", ");
-                for(String c : cats) catArray.put(c);
+                final JSONArray catArray = new JSONArray();
+                final String[] cats = item.getCategorySummary().split(", ");
+                for (String c : cats) {
+                    catArray.put(c);
+                }
                 json.put("Categories", catArray);
-
 
                 resultsPanel.add(new ListingPreviewPanel(
                         json,

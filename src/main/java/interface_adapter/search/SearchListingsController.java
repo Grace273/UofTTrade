@@ -30,7 +30,7 @@ public class SearchListingsController {
      * @param categoryName selected category that should be used for fallback (and standalone) searches
      */
     public void execute(String keyword, String categoryName) {
-        SearchListingsInputData inputData = new SearchListingsInputData(keyword, categoryName);
+        final SearchListingsInputData inputData = new SearchListingsInputData(keyword, categoryName);
         interactor.execute(inputData);
     }
 }

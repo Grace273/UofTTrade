@@ -16,15 +16,15 @@ public class Main {
         AppBuilder appBuilder = new AppBuilder();
 
         // always add "Select a Category" Category as the first category
-        Category category1 = new Category("Select a Category");
-        Category category2 = new Category("Technology");
-        Category category3 = new Category("Furniture");
-        Category category4 = new Category("Sports");
-        Category category5 = new Category("Textbooks");
-        Category category6 = new Category("Clothing");
-        Category category7 = new Category("Collectibles");
-        Category category8 = new Category("Crafts");
-        Category category9 = new Category("Art");
+        final Category category1 = new Category("Select a Category");
+        final Category category2 = new Category("Technology");
+        final Category category3 = new Category("Furniture");
+        final Category category4 = new Category("Sports");
+        final Category category5 = new Category("Textbooks");
+        final Category category6 = new Category("Clothing");
+        final Category category7 = new Category("Collectibles");
+        final Category category8 = new Category("Crafts");
+        final Category category9 = new Category("Art");
         categoriesNameArray[0] = category1.getName();
         categoriesArray.add(category1);
         categoriesNameArray[1] = category2.getName();
@@ -44,7 +44,7 @@ public class Main {
         categoriesNameArray[8] = category9.getName();
         categoriesArray.add(category9);
 
-        JFrame application = appBuilder
+        final JFrame application = appBuilder
                 .addLoginView()
                 .addRegisterView()
                 .addHomepageView()

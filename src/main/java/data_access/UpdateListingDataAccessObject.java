@@ -22,7 +22,7 @@ public class UpdateListingDataAccessObject implements UpdateListingUserDataAcces
             "https://getpantry.cloud/apiv1/pantry/c8a932ca-ce25-4926-a92c-d127ecb78809/basket/LISTINGS";
 
     private final OkHttpClient client = new OkHttpClient();
-    private final CreateListingDAO createListingDAO = new CreateListingDAO();
+    private final CreateListingDataAccessObject createListingDAO = new CreateListingDataAccessObject();
 
     @Override
     public void updateListing(int listingId) {

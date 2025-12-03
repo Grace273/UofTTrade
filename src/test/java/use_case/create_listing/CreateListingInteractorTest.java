@@ -66,7 +66,7 @@ class CreateListingInteractorTest {
                 assertEquals("item4", outputData.getName());
                 assertEquals("descriptionnn", outputData.getDescription());
                 assertEquals(categories, outputData.getCategories());
-                assertEquals(user.get_username().trim(), outputData.get_owner().get_username().trim());
+                assertEquals(user.get_username().trim(), outputData.getOwner().get_username().trim());
 
                 listingId = outputData.getListingID();
 
@@ -210,7 +210,7 @@ class CreateListingInteractorTest {
                 assertEquals("NoCategoryItem", outputData.getName());
                 assertNull(outputData.getDescription());   // expected for this constructor
                 assertTrue(outputData.getCategories().isEmpty());
-                assertEquals("grace123", outputData.get_owner().get_username());
+                assertEquals("grace123", outputData.getOwner().get_username());
 
                 assertTrue(listingDAO.existById(outputData.getListingID()+""));
             }
