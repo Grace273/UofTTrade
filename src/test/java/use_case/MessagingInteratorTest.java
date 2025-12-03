@@ -1,9 +1,7 @@
 package use_case;
 
-import data_access.UserDataAccessObject;
 import entity.GmailMessagingFactory;
 import entity.MessagingFactory;
-import entity.User;
 import org.junit.jupiter.api.Test;
 import use_case.messaging.MessagingInputBoundary;
 import use_case.messaging.MessagingInputData;
@@ -17,18 +15,15 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MessagingInteratorTest {
+
     // get the email from the database and verify that Presenter get the email successfully.
     @Test
     public void successUseEmailFromDatabase() throws IOException {
         // A successful test when the seller implements a correct email address.
-        UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
-        // Get an existed username from the database
-        User user = userDataAccessObject.getUser("Kael");
-        assertNotNull(user, "There is no user called Kael");
-        // Check if the user has a correct email
-        String username = user.get_username();
-        String email = user.get_email();
-        assertNotNull(email, "This guy should have an email");
+        final String username = "Kael";
+        final String email = "kael@example.com";
+
+        StubMessagingDao stubMessagingDao = new StubMessagingDao();
 
         MessagingInputData inputData = new MessagingInputData(username, email);
         MessagingOutputBoundary presenter = new MessagingOutputBoundary() {
@@ -38,9 +33,15 @@ public class MessagingInteratorTest {
                 assertEquals(username, data.getName());
                 String url = data.getNormalizedurl();
                 assertNotNull(url);
-                assertTrue(url.startsWith("https://mail.google.com/"), "url should be Gmail compose address");
+                assertTrue(url.startsWith("https://mail.google.com/"),
+                        "url should be Gmail compose address");
                 String encodeEmail = email.replace("@", "%40");
-                assertTrue(url.contains(encodeEmail), "url should be Gmail compose address");
+                assertTrue(url.contains(encodeEmail),
+                        "url should contain encoded email");
+
+                // DAO should not be called when email is provided
+                assertFalse(stubMessagingDao.getCalled,
+                        "DAO should not be called when email is provided");
             }
 
             @Override
@@ -52,14 +53,14 @@ public class MessagingInteratorTest {
 
         MessagingFactory factory = new GmailMessagingFactory();
         MessagingInputBoundary interactor =
-                new MessagingInteractor(userDataAccessObject, presenter, factory);
+                new MessagingInteractor(stubMessagingDao, presenter, factory);
         interactor.execute(inputData);
     }
 
     @Test
     public void invalidEmailFromDatabase() throws IOException {
         // When the user types an incorrect email
-        UserDataAccessObject userDataAccessObject = new UserDataAccessObject();
+        StubMessagingDAO_InvalidEmail dao = new StubMessagingDAO_InvalidEmail();
         MessagingInputData inputData = new MessagingInputData("Kael", "123@!");
         MessagingOutputBoundary presenter = new MessagingOutputBoundary() {
             @Override
@@ -78,7 +79,7 @@ public class MessagingInteratorTest {
 
         MessagingFactory factory = new GmailMessagingFactory();
         MessagingInputBoundary interactor =
-                new MessagingInteractor(userDataAccessObject, presenter, factory);
+                new MessagingInteractor(dao, presenter, factory);
         interactor.execute(inputData);
     }
 
@@ -95,6 +96,19 @@ public class MessagingInteratorTest {
         @Override
         public boolean isPlasuibleEmail(String email) {
             return true;
+        }
+    }
+
+    class StubMessagingDAO_InvalidEmail implements MessagingUserDataAccessInterface {
+        // DAO for invalid email test: should not be called for getValidEmailForUser
+        @Override
+        public String getValidEmailForUser(String username) throws IOException {
+            return "shouldNotBeUsed@mail.com";
+        }
+
+        @Override
+        public boolean isPlasuibleEmail(String email) {
+            return false;
         }
     }
 
@@ -198,6 +212,34 @@ public class MessagingInteratorTest {
         MessagingFactory factory = new GmailMessagingFactory();
         MessagingInputBoundary interactor =
                 new MessagingInteractor(DAO, presenter, factory);
+        interactor.execute(inputData);
+    }
+
+    @Test
+    public void blankEmailFromInput_callsDaoAndSuccess() throws IOException {
+        // When the inputdata.getEmail() is blank string, trying to get the email through DAO.
+        StubMessagingDao stubMessagingDao = new StubMessagingDao();
+        MessagingInputData inputData = new MessagingInputData("Kael", "   "); // not null but blank
+
+        MessagingOutputBoundary presenter = new MessagingOutputBoundary() {
+            @Override
+            public void presentSuccessView(MessagingOutputData data) {
+                assertEquals("Kael", data.getName());
+                // Confirm DAO was called instead of using blank email
+                assertTrue(stubMessagingDao.getCalled, "must implement getValidEmailForUser");
+                assertTrue(data.getNormalizedurl().contains("stub%40mail.com"));
+            }
+
+            @Override
+            public void presentFailureView(String errorMessage) {
+                fail("No email should return from DAO");
+            }
+        };
+
+        MessagingFactory factory = new GmailMessagingFactory();
+        MessagingInputBoundary interactor =
+                new MessagingInteractor(stubMessagingDao, presenter, factory);
+
         interactor.execute(inputData);
     }
 }
