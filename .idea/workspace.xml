@@ -6,58 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c2e5f196-2657-481f-bdfd-ed5a5a6338be" name="Changes" comment="Merge branch 'main' into create-listing-test. Update ViewListingTest with the renaming of CreateListingDAO to CreateListingDataAccessObject">
       <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/CreateListingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/CreateListingDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/UpdateListingDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/UpdateListingDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/UserDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/UserDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_listing/CreateListingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_listing/CreateListingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_listing/CreateListingPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_listing/CreateListingPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_listing/CreateListingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_listing/CreateListingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/search/SearchListingsViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingInputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingUserDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_listing/CreateListingUserDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/search/SearchListingsInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateListingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateListingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/HomepageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HomepageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SearchListingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SearchListingsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/SearchListingsInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/search/SearchListingsInteractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/UpdateListingInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/UpdateListingInteractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_listing/CreateListingInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/create_listing/CreateListingInteractorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/use_case/view_listing/ViewListingInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/view_listing/ViewListingInteractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/CreateListingDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/UpdateListingDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/UpdateListingDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/UserDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/UserDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/create_listing/CreateListingState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsState$ListingViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsState$ListingViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/search/SearchListingsState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_listing/CreateListingOutputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/search/SearchListingsInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/CreateListingView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreateListingView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/CreateListingView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreateListingView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/CreateListingView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreateListingView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/HomepageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HomepageView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SearchListingsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SearchListingsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/use_case/view_listing/ViewListingInteractorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,12 +39,12 @@
     &quot;assignee&quot;: &quot;JunzzU&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Grace273/UofTTrade.git&quot;,
-    &quot;accountId&quot;: &quot;41ef5868-ded7-44a0-90f5-6873586d9f14&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Grace273/UofTTrade",
+    "accountId": "91c75774-f1b2-4529-a748-44c884fe0fbc"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -108,11 +62,15 @@
     "JUnit.All in UofTTrade.executor": "Run",
     "JUnit.CreateListingInteractorTest.executor": "Run",
     "JUnit.ViewListingInteractorTest.executor": "Run",
+    "JUnit.ViewListingInteractorTest.testSwitchToPreviousView.executor": "Run",
+    "JUnit.ViewListingInteractorTest.viewListingFailListingDoesntExist.executor": "Run",
+    "JUnit.ViewListingInteractorTest.viewListingSuccessTest (1).executor": "Run",
+    "JUnit.ViewListingInteractorTest.viewListingSuccessTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "#102 on Merging create-listing-test",
+    "git-widget-placeholder": "update-view-listing-test",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -136,43 +94,7 @@
       <recent name="use_case.create_listing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.Main" />
-      <module name="UofTTrade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in UofTTrade" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UofTTrade" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateListingInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UofTTrade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="use_case.create_listing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="use_case.create_listing" />
-      <option name="MAIN_CLASS_NAME" value="use_case.create_listing.CreateListingInteractorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ViewListingInteractorTest">
     <configuration name="ViewListingInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UofTTrade" />
       <extension name="coverage">
@@ -188,6 +110,70 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ViewListingInteractorTest.testSwitchToPreviousView (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UofTTrade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.view_listing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.view_listing" />
+      <option name="MAIN_CLASS_NAME" value="use_case.view_listing.ViewListingInteractorTest" />
+      <option name="METHOD_NAME" value="testSwitchToPreviousView" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ViewListingInteractorTest.testSwitchToPreviousView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UofTTrade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.view_listing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.view_listing" />
+      <option name="MAIN_CLASS_NAME" value="use_case.view_listing.ViewListingInteractorTest" />
+      <option name="METHOD_NAME" value="testSwitchToPreviousView" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ViewListingInteractorTest.viewListingFailListingDoesntExist (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UofTTrade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.view_listing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.view_listing" />
+      <option name="MAIN_CLASS_NAME" value="use_case.view_listing.ViewListingInteractorTest" />
+      <option name="METHOD_NAME" value="viewListingFailListingDoesntExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ViewListingInteractorTest.viewListingSuccessTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UofTTrade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.view_listing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.view_listing" />
+      <option name="MAIN_CLASS_NAME" value="use_case.view_listing.ViewListingInteractorTest" />
+      <option name="METHOD_NAME" value="viewListingSuccessTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,18 +185,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in UofTTrade" />
-        <item itemvalue="JUnit.CreateListingInteractorTest" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ViewListingInteractorTest" />
+        <item itemvalue="JUnit.ViewListingInteractorTest.viewListingSuccessTest (1)" />
+        <item itemvalue="JUnit.ViewListingInteractorTest.viewListingFailListingDoesntExist (1)" />
+        <item itemvalue="JUnit.ViewListingInteractorTest.testSwitchToPreviousView (1)" />
+        <item itemvalue="JUnit.ViewListingInteractorTest.testSwitchToPreviousView" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
       </set>
     </attachedChunks>
   </component>
@@ -226,6 +213,7 @@
       <workItem from="1764635557025" duration="34000" />
       <workItem from="1764636397787" duration="1411000" />
       <workItem from="1764655410658" duration="7989000" />
+      <workItem from="1764735213329" duration="1373000" />
     </task>
     <task id="LOCAL-00001" summary="Solve merging issue">
       <option name="closed" value="true" />
@@ -298,11 +286,14 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/UofTTrade$CreateListingInteractorTest.ic" NAME="CreateListingInteractorTest Coverage Results" MODIFIED="1764718892216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>use_case.create_listing.*</FILTER>
+    <SUITE FILE_PATH="coverage/UofTTrade$CreateListingInteractorTest.ic" NAME="CreateListingInteractorTest Coverage Results" MODIFIED="1764706110644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>use_case.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/UofTTrade$ViewListingInteractorTest.ic" NAME="ViewListingInteractorTest Coverage Results" MODIFIED="1764655448321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>use_case.view_listing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/UofTTrade$SearchListingsInteractorTest.ic" NAME="SearchListingsInteractorTest Coverage Results" MODIFIED="1764705376560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>use_case.*</FILTER>
     </SUITE>
   </component>
 </project>
