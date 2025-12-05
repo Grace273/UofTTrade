@@ -28,6 +28,7 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
     private final JButton viewProfileButton;
     private final JButton createListing;
     private final JButton search;
+    private JScrollPane itemsScroll;
 
     private final String viewName = "logged in";
     private String username = "";
@@ -129,6 +130,12 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
      */
     public void getListingPanels(List<JSONObject> allListings) {
 
+        if (itemsPanel != null && itemsPanel.getParent() != null) {
+            System.out.println("true");
+            homepageContentPanel.remove(itemsPanel);
+            remove(itemsScroll);
+        }
+
         itemsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
         itemsPanel.setPreferredSize(new Dimension(1250, 4320));
 
@@ -136,13 +143,17 @@ public class HomepageView extends JPanel implements PropertyChangeListener {
             itemsPanel.add(createItemPanel(allListings.get(i), viewListingController, messagingController,
                     messagingViewModel, viewManagerModel));
         }
-        final JScrollPane itemsScroll = new JScrollPane(homepageContentPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+        itemsScroll = new JScrollPane(homepageContentPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         add(itemsScroll, BorderLayout.CENTER);
 
+        itemsPanel.revalidate();
+        itemsPanel.repaint();
         homepageContentPanel.add(itemsPanel);
         homepageContentPanel.revalidate();
         homepageContentPanel.repaint();
+        revalidate();
+        repaint();
 
     }
 
