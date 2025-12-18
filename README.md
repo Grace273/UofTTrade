@@ -11,11 +11,11 @@ Team Members:
 
 **Overview**
 - Run the program by running the Main file.
-- You must make an account or login to an existing account.
-- View items for trade on the homepage.
+- Make an account or login to an existing account.
+- View items up for trade on the homepage.
 - Filter listings by category or keywords.
 - Create your own item listings and view them on your profile.
-- You can contact the owner of a listing through the 'Contact Seller' button.
+- Contact the owner of a listing through the 'Contact Seller' button.
 
 **Demo Video**
 [https://screenapp.io/app/v/Rch1HbwKuW
